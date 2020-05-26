@@ -1,0 +1,25 @@
+<app-menu-button title="Foods"></app-menu-button>
+
+<ion-content>
+  <ion-row>
+    <ion-col>
+      <ion-searchbar showCancelButton="never" animated></ion-searchbar>
+    </ion-col>
+  </ion-row>
+  <ion-row *ngIf="foods.length > 0">
+    <ion-col>
+      <ion-card>
+        <ion-card-content>
+          <ion-list *ngFor="let food of foods">
+            <ion-item>
+              <ion-label><b>{{food.Name}}</b> - <b>{{food.Calorie}}</b> Calories in <b>{{food.ServingSize}}</b> grams</ion-label>
+              <ion-button (click)="broadcastAddedFood(food)">
+                <ion-icon name="add"></ion-icon>
+              </ion-button>
+            </ion-item>
+          </ion-list>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+</ion-content>
