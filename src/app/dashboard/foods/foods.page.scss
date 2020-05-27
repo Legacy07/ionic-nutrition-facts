@@ -1,0 +1,9 @@
+ion-card {
+    max-height: 500px;
+    overflow-y: scroll;
+}
+
+ion-item:hover {
+    color: var(--ion-color-primary);
+    cursor: pointer;
+}

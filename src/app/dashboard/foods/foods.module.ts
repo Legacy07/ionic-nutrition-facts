@@ -8,12 +8,18 @@ import { FoodsPageRoutingModule } from './foods-routing.module';
 
 import { FoodsPage } from './foods.page';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { CalorieBreakdownComponent } from './calorie-breakdown/calorie-breakdown.component';
+import { Ng2GoogleChartsModule } from 'ng2-google-charts';
 
 @NgModule({
   imports: [
     SharedModule,
-    FoodsPageRoutingModule
+    FoodsPageRoutingModule,
+    Ng2GoogleChartsModule
   ],
-  declarations: [FoodsPage]
+  exports: [
+    Ng2GoogleChartsModule
+  ],
+  declarations: [FoodsPage, CalorieBreakdownComponent]
 })
 export class FoodsPageModule {}
