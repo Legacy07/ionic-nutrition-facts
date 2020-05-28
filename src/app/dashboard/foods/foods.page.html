@@ -3,14 +3,14 @@
 <ion-content>
   <ion-row>
     <ion-col>
-      <ion-searchbar showCancelButton="never" animated></ion-searchbar>
+      <ion-searchbar showCancelButton="never" (ionChange)="filterFoods($event)"></ion-searchbar>
     </ion-col>
   </ion-row>
-  <ion-row *ngIf="foods.length > 0">
+  <ion-row *ngIf="filteredFoods.length > 0" style="height: 100%;">
     <ion-col size-xl="6">
-      <ion-card>
+      <ion-card >
         <ion-card-content>
-          <ion-list *ngFor="let food of foods">
+          <ion-list *ngFor="let food of filteredFoods">
             <ion-item (click)="broadcastSelectedFood(food)">
               <ion-label>
                 <h2><b>{{food.Name}}</b></h2>

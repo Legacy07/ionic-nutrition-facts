@@ -6,7 +6,13 @@ import { DiaryPage } from './diary.page';
 const routes: Routes = [
   {
     path: '',
-    component: DiaryPage
+    component: DiaryPage,
+    children: [
+      {
+        path: 'breakfast',
+        loadChildren: () => import('./breakfast/breakfast.module').then( m => m.BreakfastPageModule)
+      }
+    ]
   }
 ];
 

@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { IFoodDetail, FoodDetail } from '../foods/shared/food-detail';
+import { IFoodDetail, FoodDetail } from '../../foods/shared/food-detail';
 
 @Component({
-  selector: 'app-diary',
-  templateUrl: './diary.page.html',
-  styleUrls: ['./diary.page.scss'],
+  selector: 'app-breakfast',
+  templateUrl: './breakfast.page.html',
+  styleUrls: ['./breakfast.page.scss'],
 })
-export class DiaryPage implements OnInit {
+export class BreakfastPage implements OnInit {
 
   public foods: IFoodDetail[];
 

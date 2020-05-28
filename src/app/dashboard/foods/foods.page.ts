@@ -9,6 +9,8 @@ import { FoodService } from './shared/food.service';
 })
 export class FoodsPage implements OnInit {
   public foods: IFoodDetail[];
+  public filteredFoods: IFoodDetail[];
+
   public currentFood: IFoodDetail;
 
   constructor(public foodService: FoodService) {
@@ -22,11 +24,13 @@ export class FoodsPage implements OnInit {
 
     this.foods = [
       new FoodDetail("Tuna", "100", "109", "25", "0", "1"),
-      new FoodDetail("Tuna", "100", "120", "21", "1", "0"),
-      new FoodDetail("Tuna", "100", "120", "20", "1", "0"),
-      new FoodDetail("Tuna", "100", "120", "22", "1", "0"),
-      new FoodDetail("Tuna", "100", "120", "22", "1", "0"),
+      new FoodDetail("Bisket", "100", "120", "21", "1", "0"),
+      new FoodDetail("Mayo", "100", "120", "20", "1", "0"),
+      new FoodDetail("Pasta", "100", "120", "22", "1", "0"),
+      new FoodDetail("Egg", "100", "120", "22", "1", "0"),
     ];
+
+    this.filteredFoods = JSON.parse(JSON.stringify(this.foods));
   }
 
   selectedFood(food: IFoodDetail) {
@@ -39,6 +43,23 @@ export class FoodsPage implements OnInit {
 
   broadcastSelectedFood(food: IFoodDetail) {
     this.foodService.selectedFood(food);
+  }
+
+  async filterFoods(evt: any) {
+    this.foodService.selectedFood(FoodDetail.defaultInstance());
+    this.filteredFoods = JSON.parse(JSON.stringify(this.foods));
+
+    const searchTerm = evt.srcElement.value;
+  
+    if (!searchTerm) {
+      return;
+    }
+
+    this.filteredFoods = this.foods.filter(currentFood => {
+      if (currentFood.Name && searchTerm) {
+        return (currentFood.Name.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1);
+      }
+    });
   }
   
 }
