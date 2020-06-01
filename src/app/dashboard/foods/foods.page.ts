@@ -1,6 +1,8 @@
 import { Component, OnInit, Output, EventEmitter } from "@angular/core";
 import { FoodDetail, IFoodDetail } from "./shared/food-detail";
 import { FoodService } from './shared/food.service';
+import { ModalController } from '@ionic/angular';
+import { AddMealModalComponent } from './add-meal-modal/add-meal-modal.component';
 
 @Component({
   selector: "app-foods",
@@ -13,7 +15,7 @@ export class FoodsPage implements OnInit {
 
   public currentFood: IFoodDetail;
 
-  constructor(public foodService: FoodService) {
+  constructor(public foodService: FoodService, public modalController: ModalController) {
     this.foodService
     .getSelectedFood$()
     .subscribe((item) => this.selectedFood(item));
@@ -37,10 +39,6 @@ export class FoodsPage implements OnInit {
     this.currentFood = food;
   }
 
-  broadcastAddedFood(food: any) {
-    // open modal to select meal type like breakfast etc..then broadvcast the added meal which diary can pick up
-  }
-
   broadcastSelectedFood(food: IFoodDetail) {
     this.foodService.selectedFood(food);
   }
@@ -60,6 +58,18 @@ export class FoodsPage implements OnInit {
         return (currentFood.Name.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1);
       }
     });
+  }
+
+  async openAddMealTypeModal(food: IFoodDetail) {
+    const modal = await this.modalController.create({
+      component: AddMealModalComponent,
+      componentProps: {
+        selectedFood: food,
+      },
+      swipeToClose: true
+    });
+    
+    await modal.present();
   }
   
 }

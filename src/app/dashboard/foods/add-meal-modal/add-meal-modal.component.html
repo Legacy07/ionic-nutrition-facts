@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button color="dark" (click)="closeModal()">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Add Meal for {{selectedFood.Name}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-row>
+    <ion-col size-xl="8" offset-xl="2" size="12">
+      <ion-list>
+        <ion-item>
+          <ion-label>Select a Meal</ion-label>
+          <ion-select value="breakfast" [cancelText] okText="Add" cancelText="Cancel" [(ngModel)]="selectedMealType">
+            <ion-select-option value="breakfast">Breakfast</ion-select-option>
+            <ion-select-option value="lunch">Lunch</ion-select-option>
+            <ion-select-option value="dinner">Dinner</ion-select-option>
+            <ion-select-option value="snack">Snack</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col offset-xl="5">
+      <ion-button (click)="addMealBasedOnMealType()">
+        Add Meal
+      </ion-button>
+    </ion-col>
+  </ion-row>
+</ion-content>

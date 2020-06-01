@@ -10,6 +10,7 @@ import { FoodsPage } from './foods.page';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { CalorieBreakdownComponent } from './calorie-breakdown/calorie-breakdown.component';
 import { Ng2GoogleChartsModule } from 'ng2-google-charts';
+import { AddMealModalComponent } from './add-meal-modal/add-meal-modal.component';
 
 @NgModule({
   imports: [
@@ -20,6 +21,6 @@ import { Ng2GoogleChartsModule } from 'ng2-google-charts';
   exports: [
     Ng2GoogleChartsModule
   ],
-  declarations: [FoodsPage, CalorieBreakdownComponent]
+  declarations: [FoodsPage, CalorieBreakdownComponent, AddMealModalComponent]
 })
 export class FoodsPageModule {}
