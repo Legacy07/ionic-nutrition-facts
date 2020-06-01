@@ -15,17 +15,11 @@ export class BreakfastPage implements OnInit {
     this.foods = new Array<FoodDetail>();
    }
 
-  ngOnInit() {    
-    // this.foods = [
-    //   new FoodDetail("Tuna", "100", "109", "25", "0", "1"),
-    //   new FoodDetail("Bisket", "100", "120", "21", "1", "0"),
-    //   new FoodDetail("Mayo", "100", "120", "20", "1", "0"),
-    //   new FoodDetail("Pasta", "100", "120", "22", "1", "0"),
-    //   new FoodDetail("Egg", "100", "120", "22", "1", "0"),
-    // ];
-
-    this.storage.get("breakfast").then((val) => {
-      this.foods = this.foods.concat(val);
+  ngOnInit() {
+    this.storage.get("breakfast").then((meals) => {
+      if (meals != null) {
+        this.foods = this.foods.concat(meals);
+      }
     });    
   }
 
