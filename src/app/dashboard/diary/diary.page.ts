@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { IFoodDetail, FoodDetail } from '../foods/shared/food-detail';
+import { LocalStorageService } from 'src/app/shared/services/local-storage.service';
 
 @Component({
   selector: 'app-diary',
@@ -7,19 +8,13 @@ import { IFoodDetail, FoodDetail } from '../foods/shared/food-detail';
   styleUrls: ['./diary.page.scss'],
 })
 export class DiaryPage implements OnInit {
+  public totalCalories;
+  public totalProtein;
+  public totalFat;
+  public totalCarb;
 
-  public foods: IFoodDetail[];
-
-  constructor() {
-    this.foods = new Array<FoodDetail>();
-
-    this.foods = [
-      new FoodDetail("Tuna", "100", "109", "25", "0", "1"),
-      new FoodDetail("Bisket", "100", "120", "21", "1", "0"),
-      new FoodDetail("Mayo", "100", "120", "20", "1", "0"),
-      new FoodDetail("Pasta", "100", "120", "22", "1", "0"),
-      new FoodDetail("Egg", "100", "120", "22", "1", "0"),
-    ];
+  constructor(private localStorageService: LocalStorageService) {
+    
    }
 
   ngOnInit() {

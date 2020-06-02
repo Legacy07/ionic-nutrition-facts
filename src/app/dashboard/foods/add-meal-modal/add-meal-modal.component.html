@@ -16,11 +16,9 @@
       <ion-list>
         <ion-item>
           <ion-label>Select a Meal</ion-label>
-          <ion-select value="breakfast" [cancelText] okText="Add" cancelText="Cancel" [(ngModel)]="selectedMealType">
-            <ion-select-option value="breakfast">Breakfast</ion-select-option>
-            <ion-select-option value="lunch">Lunch</ion-select-option>
-            <ion-select-option value="dinner">Dinner</ion-select-option>
-            <ion-select-option value="snack">Snack</ion-select-option>
+          <ion-select [cancelText] okText="Add" cancelText="Cancel"
+            [(ngModel)]="selectedMealType">
+            <ion-select-option *ngFor="let mealType of mealTypes" [value]="mealType">{{mealType}}</ion-select-option>
           </ion-select>
         </ion-item>
       </ion-list>

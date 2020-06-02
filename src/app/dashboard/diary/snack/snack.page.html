@@ -3,6 +3,12 @@
     <ion-col size-xl="3" size-xs="6" *ngFor="let food of foods">
       <ion-card id="meal-cards">
         <ion-card-content>
+          <ion-button size="small" color="danger" class="ion-float-right" (click)="removeFood(food.Name)">
+            <ion-icon name="trash"></ion-icon>
+          </ion-button>
+          <ion-button size="small" class="ion-float-right">
+            <ion-icon name="create-outline"></ion-icon>
+          </ion-button>
           <ion-label>
             <h2><b>{{food.Name}}</b></h2>
             <p><b>{{food.ServingSize}}</b> grams</p>
@@ -11,9 +17,6 @@
             <p><b>{{food.Carbohydrate}}</b>g Carbs</p>
             <p><b>{{food.Fat}}</b>g Fat</p>
           </ion-label>
-          <ion-button class="ion-float-right">
-            <ion-icon name="create-outline"></ion-icon>
-          </ion-button>
         </ion-card-content>
       </ion-card>
     </ion-col>

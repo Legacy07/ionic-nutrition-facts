@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IFoodDetail, FoodDetail } from '../../foods/shared/food-detail';
-import { Storage } from '@ionic/storage';
+import { LocalStorageService } from 'src/app/shared/services/local-storage.service';
+import { LoggerService } from 'src/app/core/logger.service';
 
 @Component({
   selector: 'app-breakfast',
@@ -11,16 +12,26 @@ export class BreakfastPage implements OnInit {
 
   public foods: IFoodDetail[];
 
-  constructor(private storage: Storage) {
+  constructor(private storageService: LocalStorageService, public loggerService: LoggerService) {
     this.foods = new Array<FoodDetail>();
    }
 
   ngOnInit() {
-    this.storage.get("breakfast").then((meals) => {
+   this.getFoodsFromStorage();   
+  }
+
+  public getFoodsFromStorage() {
+    this.storageService.getValue(this.storageService.breakfastKey).then((meals) => {
       if (meals != null) {
         this.foods = this.foods.concat(meals);
       }
-    });    
+    }); 
   }
 
+  public removeFood(foodName: string) {
+    this.storageService.removeValueInKey(this.storageService.breakfastKey, foodName).then((v) => {
+      this.getFoodsFromStorage();   
+      this.loggerService.success("Removed " + foodName);
+    });
+  }
 }

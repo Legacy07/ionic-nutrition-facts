@@ -1,7 +1,8 @@
 import { Component, OnInit, Input } from "@angular/core";
-import { ModalController, ToastController } from "@ionic/angular";
+import { ModalController } from "@ionic/angular";
 import { IFoodDetail } from "../shared/food-detail";
-import { Storage } from "@ionic/storage";
+import { LocalStorageService } from "src/app/shared/services/local-storage.service";
+import { LoggerService } from "src/app/core/logger.service";
 
 @Component({
   selector: "app-add-meal-modal",
@@ -9,16 +10,19 @@ import { Storage } from "@ionic/storage";
   styleUrls: ["./add-meal-modal.component.scss"],
 })
 export class AddMealModalComponent implements OnInit {
+  public mealTypes: string[];
   public selectedMealType: string;
   @Input() selectedFood: IFoodDetail;
 
   constructor(
     public modalController: ModalController,
-    private storage: Storage,
-    public toastController: ToastController
+    private storageServices: LocalStorageService,
+    private loggerService: LoggerService
   ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.mealTypes = ["Breakfast", "Lunch", "Dinner", "Snack"];
+  }
 
   public addMealBasedOnMealType() {
     this.broadcastAddedFood();
@@ -27,9 +31,9 @@ export class AddMealModalComponent implements OnInit {
 
   public broadcastAddedFood() {
     if (this.selectedMealType !== "") {
-      this.storage
-        .get(this.selectedMealType)
-        .then(async (val) => {
+      this.storageServices
+        .getValue(this.selectedMealType)
+        .then((val) => {
           var meals = val;
           if (meals != null) {
             meals.push(this.selectedFood);
@@ -38,14 +42,12 @@ export class AddMealModalComponent implements OnInit {
             meals.push(this.selectedFood);
           }
 
-          this.storage.set(this.selectedMealType, meals);
-
-          const toast = await this.toastController.create({
-            message: "Added Meal in " + this.selectedMealType,
-            duration: 2000,
-            color: "success"
-          });
-          toast.present();
+          this.storageServices
+            .setValue(this.selectedMealType, meals)
+            .then(async (v) => {
+              var msg = "Added Meal in " + this.selectedMealType;
+              this.loggerService.success(msg);
+            });
         })
         .catch((c) => {
           console.log(
