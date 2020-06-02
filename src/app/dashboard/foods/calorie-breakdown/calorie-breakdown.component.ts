@@ -1,13 +1,13 @@
-import { Component, OnInit, Input } from "@angular/core";
-import { GoogleChartInterface } from "ng2-google-charts";
-import { FoodService } from "../shared/food.service";
-import { IFoodDetail } from "../shared/food-detail";
-import { CalorieCalculatorService } from "../shared/calorie-calculator.service";
+import { Component, OnInit, Input } from '@angular/core';
+import { GoogleChartInterface } from 'ng2-google-charts';
+import { FoodService } from '../shared/food.service';
+import { IFoodDetail } from '../shared/food-detail';
+import { CalorieCalculatorService } from '../shared/calorie-calculator.service';
 
 @Component({
-  selector: "app-calorie-breakdown",
-  templateUrl: "./calorie-breakdown.component.html",
-  styleUrls: ["./calorie-breakdown.component.scss"],
+  selector: 'app-calorie-breakdown',
+  templateUrl: './calorie-breakdown.component.html',
+  styleUrls: ['./calorie-breakdown.component.scss'],
 })
 export class CalorieBreakdownComponent implements OnInit {
   public pieChart: GoogleChartInterface;
@@ -27,9 +27,9 @@ export class CalorieBreakdownComponent implements OnInit {
       .getSelectedFood$()
       .subscribe((item) => this.selectedFood(item));
 
-    // this.currentFood.Protein = "1";
-    // this.currentFood.Carbohydrate = "0.1";
-    // this.currentFood.Fat = "20";
+    this.currentFood.Protein = 25;
+    this.currentFood.Carbohydrate = 1;
+    this.currentFood.Fat = 1;
     this.loadSimplePieChart();
   }
 
@@ -47,23 +47,23 @@ export class CalorieBreakdownComponent implements OnInit {
       this.caloriCalculatorService.carbToCalories(food.Carbohydrate),
       food.Calorie
     );
+    // this.loadSimplePieChart();
   }
 
   loadSimplePieChart() {
     this.pieChart = {
-      chartType: "PieChart",
+      chartType: 'PieChart',
       dataTable: [
-        ["Nutrition", "%"],
-        ["Protein ", "92"],
-        ["Fat", "0"],
-        ["Carb", "1"],
+        ['Nutrition', '%'],
+        ['Protein', this.currentFood.Protein],
+        ['Fat', this.currentFood.Fat],
+        ['Carb', this.currentFood.Carbohydrate],
       ],
       //opt_firstRowIsData: true,
       options: {
-        // is3D: true,
+        is3D: true,
         height: 300,
-        width: "100%",
-        sliceVisibilityThreshold: .2
+        width: '100%'
       },
     };
   }

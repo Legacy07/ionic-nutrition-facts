@@ -7,10 +7,11 @@
     </ion-col>
   </ion-row>
   <ion-row *ngIf="filteredFoods.length > 0">
-    <ion-col size-xl="6" id="list">
-      <!-- <ion-card > -->
-        <!-- <ion-card-content > -->
-          <ion-list *ngFor="let food of filteredFoods" >
+    <ion-col size-xl="6">
+      <!-- might wanna remove card  -->
+      <ion-card >
+        <ion-card-content *ngFor="let food of filteredFoods" >
+          <ion-list  >
             <ion-item (click)="broadcastSelectedFood(food)">
               <ion-label>
                 <h2><b>{{food.Name}}</b></h2>
@@ -25,8 +26,8 @@
               </ion-button>
             </ion-item>
           </ion-list>
-        <!-- </ion-card-content> -->
-      <!-- </ion-card> -->
+        </ion-card-content>
+      </ion-card>
     </ion-col>
     <ion-col size-xl="6" [hidden]="currentFood.Name === undefined">
       <app-calorie-breakdown></app-calorie-breakdown>

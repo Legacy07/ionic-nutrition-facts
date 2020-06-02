@@ -25,11 +25,11 @@ export class FoodsPage implements OnInit {
     this.foods = new Array<FoodDetail>();
 
     this.foods = [
-      new FoodDetail("Tuna", "100", "109", "25", "0", "1"),
-      new FoodDetail("Bisket", "100", "120", "21", "1", "0"),
-      new FoodDetail("Mayo", "100", "120", "20", "1", "0"),
-      new FoodDetail("Pasta", "100", "120", "22", "1", "0"),
-      new FoodDetail("Egg", "100", "120", "22", "1", "0"),
+      new FoodDetail("Tuna", "grams", 100, 109, 25, 0, 1),
+      new FoodDetail("Pasta", "grams", 100, 109, 8, 25, 0),
+      new FoodDetail("Egg", "single", 1, 60, 6, 3, 4),
+      new FoodDetail("Chicken", "grams", 100, 200, 30, 2, 2),
+      new FoodDetail("Yoghurt", "grams", 100, 120, 5, 23, 4),
     ];
 
     this.filteredFoods = JSON.parse(JSON.stringify(this.foods));

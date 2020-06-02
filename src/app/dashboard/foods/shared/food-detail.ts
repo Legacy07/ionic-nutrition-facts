@@ -1,23 +1,25 @@
 export interface IFoodDetail {
     Name: string;
-    ServingSize: string;
-    Calorie: string;
-    Protein: string;
-    Carbohydrate: string;
-    Fat: string;
+    ServingType: string;
+    ServingSize: number;
+    Calorie: number;
+    Protein: number;
+    Carbohydrate: number;
+    Fat: number;
   }
   
   export class FoodDetail implements IFoodDetail {
     constructor(
         public Name: string,
-        public ServingSize: string,
-        public Calorie: string,
-        public Protein: string,
-        public Carbohydrate: string,
-        public Fat: string) {}
+        public ServingType: string,
+        public ServingSize: number,
+        public Calorie: number,
+        public Protein: number,
+        public Carbohydrate: number,
+        public Fat: number) {}
   
     public static defaultInstance(): FoodDetail {
-      return new FoodDetail(undefined, undefined, undefined, undefined, undefined, undefined);
+      return new FoodDetail(undefined, undefined, undefined, undefined, undefined, undefined, undefined);
     }
   }
   
