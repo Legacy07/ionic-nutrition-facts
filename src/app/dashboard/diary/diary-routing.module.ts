@@ -9,6 +9,11 @@ const routes: Routes = [
     component: DiaryPage,
     children: [
       {
+        path: '',
+        redirectTo: 'breakfast',
+        pathMatch: 'full'
+      },
+      {
         path: 'breakfast',
         loadChildren: () => import('./breakfast/breakfast.module').then( m => m.BreakfastPageModule),
       },

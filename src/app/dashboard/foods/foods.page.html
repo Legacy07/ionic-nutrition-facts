@@ -6,7 +6,7 @@
       <ion-searchbar showCancelButton="never" (ionChange)="filterFoods($event)"></ion-searchbar>
     </ion-col>
   </ion-row>
-  <ion-row *ngIf="filteredFoods.length > 0">
+  <ion-row *ngIf="filteredFoods.length > 0" style="height: 100%;">
     <ion-col size-xl="6">
       <!-- might wanna remove card  -->
       <ion-card >
@@ -29,7 +29,7 @@
         </ion-card-content>
       </ion-card>
     </ion-col>
-    <ion-col size-xl="6" [hidden]="currentFood.Name === undefined">
+    <ion-col class="ion-hide-md-down" size-xl="6" [hidden]="currentFood.Name === undefined">
       <app-calorie-breakdown></app-calorie-breakdown>
     </ion-col>
   </ion-row>
