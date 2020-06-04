@@ -1,17 +1,23 @@
 <ion-content>
   <ion-row>
-    <ion-col size-xl="3" size-xs="6" size-md="4" *ngFor="let food of foods">
+    <ion-col size-xs="6" size-md="4" *ngFor="let food of foods">
       <ion-card id="meal-cards">
-        <ion-card-content>
-          <ion-button size="small" color="danger" class="ion-float-right" (click)="removeFood(food.Name)">
+        <ion-card-header>
+          <ion-button fill="clear" size="small" class="ion-float-right" style="margin: -5px;" (click)="toggleShowContent()">
+            <ion-icon name="chevron-down-outline"></ion-icon>
+          </ion-button>
+          <ion-button size="small" fill="clear" color="danger" class="ion-float-right ion-hide-sm-down" (click)="removeFood(food.Name)"
+            style="margin: -5px;">
             <ion-icon name="trash"></ion-icon>
           </ion-button>
-          <ion-button size="small" class="ion-float-right">
+          <ion-button size="small" fill="clear" class="ion-float-right" style="margin: -5px;">
             <ion-icon name="create-outline"></ion-icon>
           </ion-button>
+          <b>{{food.Name}}</b>
+        </ion-card-header>
+        <ion-card-content *ngIf="showContent"> 
           <ion-label>
-            <h2><b>{{food.Name}}</b></h2>
-            <p><b>{{food.ServingSize}}</b> grams</p>
+            <p><b>Amount per {{food.ServingSize}}</b> {{food.ServingType}}</p>
             <p><b>{{food.Calorie}}</b> Calories</p>
             <p><b>{{food.Protein}}</b>g Protein</p>
             <p><b>{{food.Carbohydrate}}</b>g Carbs</p>

@@ -11,6 +11,7 @@ import { LoggerService } from 'src/app/core/logger.service';
 export class LunchPage implements OnInit {
 
   public foods: IFoodDetail[];
+  public showContent: boolean = true;
 
   constructor(private storageService: LocalStorageService, public loggerService: LoggerService) {
     this.foods = new Array<FoodDetail>();
@@ -33,5 +34,9 @@ export class LunchPage implements OnInit {
       this.getFoodsFromStorage();   
       this.loggerService.success("Removed " + foodName);
     });
+  }
+
+  public toggleShowContent() {
+    this.showContent = !this.showContent;
   }
 }

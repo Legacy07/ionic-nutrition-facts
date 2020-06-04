@@ -1,6 +1,5 @@
 import { Component, OnInit } from "@angular/core";
 import { IFoodDetail, FoodDetail } from "../../foods/shared/food-detail";
-import { Storage } from "@ionic/storage";
 import { LocalStorageService } from 'src/app/shared/services/local-storage.service';
 import { LoggerService } from 'src/app/core/logger.service';
 
@@ -11,6 +10,7 @@ import { LoggerService } from 'src/app/core/logger.service';
 })
 export class DinnerPage implements OnInit {
   public foods: IFoodDetail[];
+  public showContent: boolean = true;
 
   constructor(private storageService: LocalStorageService, public loggerService: LoggerService) {
     this.foods = new Array<FoodDetail>();
@@ -33,5 +33,9 @@ export class DinnerPage implements OnInit {
       this.getFoodsFromStorage();   
       this.loggerService.success("Removed " + foodName);
     });
+  }
+
+  public toggleShowContent() {
+    this.showContent = !this.showContent;
   }
 }

@@ -27,7 +27,7 @@ export class FoodsPage implements OnInit {
     this.foods = [
       new FoodDetail("Tuna", "grams", 100, 109, 25, 0, 1),
       new FoodDetail("Pasta", "grams", 100, 109, 8, 25, 0),
-      new FoodDetail("Egg", "single", 1, 60, 6, 3, 4),
+      new FoodDetail("Egg", "medium", 1, 60, 6, 3, 4),
       new FoodDetail("Chicken", "grams", 100, 200, 30, 2, 2),
       new FoodDetail("Yoghurt", "grams", 100, 120, 5, 23, 4),
     ];

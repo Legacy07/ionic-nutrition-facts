@@ -19,13 +19,13 @@ export class BreakfastPage implements OnInit {
    }
 
   ngOnInit() {
-   this.getFoodsFromStorage();   
+    this.getFoodsFromStorage();
   }
 
   public getFoodsFromStorage() {
     this.storageService.getValue(this.storageService.breakfastKey).then((meals) => {
       if (meals != null) {
-        this.foods = this.foods.concat(meals);
+        this.foods = meals;
       }
     }); 
   }

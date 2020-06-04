@@ -2,7 +2,7 @@
 
 <ion-row>
   <!-- add background color to each -->
-  <ion-col size-xl="2" size-xs="12" offset-xl="1">
+  <ion-col size-xl="1" size-sm="2" size-xs="12" offset-xl="1">
     <ion-card>
       <ion-card-content>
         <p class="ion-text-center">Total</p>
@@ -11,30 +11,29 @@
   </ion-col>
   <ion-col size-xl="2">
     <ion-card>
-      <ion-card-content>
-        <p>Calories</p>
-        <p></p>
+      <ion-card-content class="ion-text-center">
+        <ion-text>{{this.totalCalories}} Calories</ion-text>
       </ion-card-content>
     </ion-card>
   </ion-col>
   <ion-col size-xl="2">
     <ion-card>
-      <ion-card-content>
-        <p>Protein</p>
+      <ion-card-content class="ion-text-center">
+        <ion-text>{{this.totalProtein}}g of Protein</ion-text>
       </ion-card-content>
     </ion-card>
   </ion-col>
   <ion-col size-xl="2">
     <ion-card>
-      <ion-card-content>
-        <p>Carb</p>
+      <ion-card-content class="ion-text-center">
+        <ion-text>{{this.totalCarb}}g of Carbs</ion-text>
       </ion-card-content>
     </ion-card>
   </ion-col>
   <ion-col size-xl="2">
     <ion-card>
-      <ion-card-content>
-        <p>Fat</p>
+      <ion-card-content class="ion-text-center">
+        <ion-text>{{this.totalFat}}g of Fat</ion-text>
       </ion-card-content>
     </ion-card>
   </ion-col>

@@ -21,9 +21,9 @@ export class LocalStorageService {
     return this.storage.set(key, value);
   }
 
-  public removeValueInKey(key: any, value: any): Promise<any> {
+  public async removeValueInKey(key: any, value: any): Promise<any> {
     var meals;
-    this.getValue(key).then((val: IFoodDetail[]) => {
+    await this.getValue(key).then((val: IFoodDetail[]) => {
       meals = val;
       if (meals != null) {
         const objIndex = meals.findIndex((obj) => obj.Name === value);
@@ -33,5 +33,9 @@ export class LocalStorageService {
       }
     });
     return this.setValue(key, meals);
+  }
+
+  public clearAll(){
+    this.storage.clear();
   }
 }
