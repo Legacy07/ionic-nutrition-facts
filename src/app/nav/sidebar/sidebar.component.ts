@@ -24,7 +24,9 @@ export class SidebarComponent implements OnInit {
   addMenuPages() {
     this.pages = new Array<ISideBarItem>(
       new SideBarItem('Diary', '/dashboard/diary', 'newspaper-outline'),
-      new SideBarItem('Foods', '/dashboard/foods', 'fast-food-outline')
+      new SideBarItem('Foods', '/dashboard/foods', 'fast-food-outline'),
+      new SideBarItem('Admin', '/dashboard/admin', 'albums-outline'),
+      new SideBarItem('Settings', '/dashboard/settings', 'settings-outline')
     );
   }
 }

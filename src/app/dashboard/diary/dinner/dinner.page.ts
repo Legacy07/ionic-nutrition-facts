@@ -23,7 +23,7 @@ export class DinnerPage implements OnInit {
   public getFoodsFromStorage() {
     this.storageService.getValue(this.storageService.dinnerKey).then((meals) => {
       if (meals != null) {
-        this.foods = this.foods.concat(meals);
+        this.foods = meals;
       }
     }); 
   }
