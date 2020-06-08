@@ -28,6 +28,7 @@ export class CalorieBreakdownComponent implements OnInit {
       .subscribe((item) => this.selectedFood(item));
 
     this.loadSimplePieChart();
+    this.drawPieChart();
   }
 
   selectedFood(food: IFoodDetail) {
@@ -68,7 +69,9 @@ export class CalorieBreakdownComponent implements OnInit {
         ["Fat", this.currentFood.Fat],
         ["Carb", this.currentFood.Carbohydrate],
       ];
-      this.pieChart.component.draw();
+      if (this.pieChart.component !== undefined) {
+        this.pieChart.component.draw();
+      }
     }
   }
 }

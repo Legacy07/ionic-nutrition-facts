@@ -16,8 +16,6 @@ export class DiaryPage implements OnInit {
   constructor(private localStorageService: LocalStorageService) {}
 
   ngOnInit() {
-    // this.calculateTotal();
-    // this.localStorageService.clearAll();
   }
 
   ionViewDidEnter() {
