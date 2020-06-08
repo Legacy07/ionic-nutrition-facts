@@ -1,8 +1,8 @@
 import { Component, OnInit, Output, EventEmitter } from "@angular/core";
 import { FoodDetail, IFoodDetail } from "./shared/food-detail";
-import { FoodService } from './shared/food.service';
-import { ModalController } from '@ionic/angular';
-import { AddMealModalComponent } from './add-meal-modal/add-meal-modal.component';
+import { FoodService } from "./shared/food.service";
+import { ModalController } from "@ionic/angular";
+import { AddMealModalComponent } from "./add-meal-modal/add-meal-modal.component";
 
 @Component({
   selector: "app-foods",
@@ -15,10 +15,13 @@ export class FoodsPage implements OnInit {
 
   public currentFood: IFoodDetail;
 
-  constructor(public foodService: FoodService, public modalController: ModalController) {
+  constructor(
+    public foodService: FoodService,
+    public modalController: ModalController
+  ) {
     this.foodService
-    .getSelectedFood$()
-    .subscribe((item) => this.selectedFood(item));
+      .getSelectedFood$()
+      .subscribe((item) => this.selectedFood(item));
   }
 
   ngOnInit() {
@@ -48,14 +51,16 @@ export class FoodsPage implements OnInit {
     this.filteredFoods = JSON.parse(JSON.stringify(this.foods));
 
     const searchTerm = evt.srcElement.value;
-  
+
     if (!searchTerm) {
       return;
     }
 
-    this.filteredFoods = this.foods.filter(currentFood => {
+    this.filteredFoods = this.foods.filter((currentFood) => {
       if (currentFood.Name && searchTerm) {
-        return (currentFood.Name.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1);
+        return (
+          currentFood.Name.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1
+        );
       }
     });
   }
@@ -66,10 +71,9 @@ export class FoodsPage implements OnInit {
       componentProps: {
         selectedFood: food,
       },
-      swipeToClose: true
+      swipeToClose: true,
     });
-    
+
     await modal.present();
   }
-  
 }

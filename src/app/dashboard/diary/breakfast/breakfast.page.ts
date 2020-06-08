@@ -3,6 +3,7 @@ import { IFoodDetail, FoodDetail } from '../../foods/shared/food-detail';
 import { LocalStorageService } from 'src/app/shared/services/local-storage.service';
 import { LoggerService } from 'src/app/core/logger.service';
 import { ThrowStmt } from '@angular/compiler';
+import { MealsService } from '../shared/meals.service';
 
 @Component({
   selector: 'app-breakfast',

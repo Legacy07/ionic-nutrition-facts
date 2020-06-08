@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { IFoodDetail, FoodDetail } from "../foods/shared/food-detail";
 import { LocalStorageService } from "src/app/shared/services/local-storage.service";
+import { MealsService } from "./shared/meals.service";
 
 @Component({
   selector: "app-diary",
@@ -13,7 +14,8 @@ export class DiaryPage implements OnInit {
   public totalFat = 0;
   public totalCarb = 0;
 
-  constructor(private localStorageService: LocalStorageService) {}
+  constructor(
+    private localStorageService: LocalStorageService) {}
 
   ngOnInit() {
   }
@@ -21,7 +23,7 @@ export class DiaryPage implements OnInit {
   ionViewDidEnter() {
     this.calculateTotal();
   }
-
+  
   calculateTotal() {
     var storage = this.localStorageService;
     var meals = [
@@ -34,7 +36,7 @@ export class DiaryPage implements OnInit {
     meals.forEach((meal) => {
       this.localStorageService.getValue(meal).then((foods: IFoodDetail[]) => {
         if (foods != null) {
-          foods.forEach(food => {
+          foods.forEach((food) => {
             this.totalCalories = this.totalCalories + food.Calorie;
             this.totalProtein = this.totalProtein + food.Protein;
             this.totalCarb = this.totalCarb + food.Carbohydrate;
