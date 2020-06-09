@@ -10,5 +10,12 @@ ion-note {
     padding: 1px;
     float: right;
     position: absolute;
+    margin-top: 2%;
     margin-left: 15%;
+}
+
+@media only screen and (max-width: 801px) {
+    ion-note {
+        margin-left: 20%;
+    }
 }

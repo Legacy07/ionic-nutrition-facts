@@ -23,13 +23,17 @@ const routes: Routes = [
         loadChildren: () =>
           import("./foods/foods.module").then((m) => m.FoodsPageModule),
       },
-
       {
         path: "settings",
         loadChildren: () =>
           import("./settings/settings.module").then(
             (m) => m.SettingsPageModule
           ),
+      },
+      {
+        path: "admin",
+        loadChildren: () =>
+          import("./admin/admin.module").then((m) => m.AdminPageModule),
       },
     ],
   },
