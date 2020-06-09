@@ -3,6 +3,7 @@
     <ion-col size-xs="6" size-md="4" *ngFor="let food of foods">
       <ion-card id="meal-cards">
         <ion-card-header>
+          <!-- using popover when clicked on a edit which pops either edit quantity or delete  -->
           <ion-button fill="clear" size="small" class="ion-float-right" style="margin: -5px;" (click)="toggleShowContent()">
             <ion-icon name="chevron-down-outline"></ion-icon>
           </ion-button>

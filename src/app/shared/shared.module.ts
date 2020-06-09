@@ -18,7 +18,7 @@ import { IonicStorageModule } from '@ionic/storage';
     HttpClientModule,
     IonicModule,
     MenuButtonComponent,
-    IonicStorageModule
+    IonicStorageModule,
   ]
 })
 export class SharedModule {}

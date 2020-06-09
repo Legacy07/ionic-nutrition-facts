@@ -80,6 +80,7 @@ export class AddMealModalComponent implements OnInit {
     return this.selectedMealType !== undefined && this.currentFood.ServingSize > 0;
   }
 
+  // need to calculate based on serving size like grams and quantity 
   private recalculateNutritionsBasedOnServingSize() : IFoodDetail {
     if (this.currentFood.ServingSize === this.selectedFood.ServingSize) {
       return this.currentFood;

@@ -14,6 +14,7 @@ export class DiaryPage implements OnInit {
   public totalFat = 0;
   public totalCarb = 0;
 
+  public numberOfBreakfastMeals: number;
   constructor(
     private localStorageService: LocalStorageService) {}
 
@@ -22,6 +23,9 @@ export class DiaryPage implements OnInit {
 
   ionViewDidEnter() {
     this.calculateTotal();
+    this.localStorageService.getValue(this.localStorageService.breakfastKey).then((foods: IFoodDetail[]) => {
+      this.numberOfBreakfastMeals = foods.length;
+    });
   }
   
   calculateTotal() {
