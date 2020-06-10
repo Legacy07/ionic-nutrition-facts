@@ -37,6 +37,10 @@ const routes: Routes = [
       },
     ],
   },
+  {
+    path: 'bmr-calculator',
+    loadChildren: () => import('./bmr-calculator/bmr-calculator.module').then( m => m.BmrCalculatorPageModule)
+  },
 ];
 
 @NgModule({

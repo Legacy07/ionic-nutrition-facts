@@ -9,6 +9,7 @@
   <ion-row *ngIf="filteredFoods.length > 0" style="height: 100%;">
     <ion-col size-xl="6">
       <!-- might wanna remove card  -->
+      <!-- integrate ion-infinite-scroll -->
       <ion-card >
         <ion-card-content *ngFor="let food of filteredFoods" >
           <ion-list  >
