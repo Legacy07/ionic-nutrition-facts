@@ -3,6 +3,7 @@ import { FoodDetail, IFoodDetail } from "./shared/food-detail";
 import { FoodService } from "./shared/food.service";
 import { ModalController } from "@ionic/angular";
 import { AddMealModalComponent } from "./add-meal-modal/add-meal-modal.component";
+import { FoodsRepositoryService } from './shared/foods-repository.service';
 
 @Component({
   selector: "app-foods",
@@ -17,7 +18,8 @@ export class FoodsPage implements OnInit {
 
   constructor(
     public foodService: FoodService,
-    public modalController: ModalController
+    public modalController: ModalController,
+    private foodsRepository: FoodsRepositoryService
   ) {
     this.foodService
       .getSelectedFood$()
@@ -25,16 +27,7 @@ export class FoodsPage implements OnInit {
   }
 
   ngOnInit() {
-    this.foods = new Array<FoodDetail>();
-
-    this.foods = [
-      new FoodDetail("Tuna", "grams", 100, 109, 25, 0, 1),
-      new FoodDetail("Pasta", "grams", 100, 109, 8, 25, 0),
-      new FoodDetail("Egg", "medium", 1, 60, 6, 3, 4),
-      new FoodDetail("Chicken", "grams", 100, 200, 30, 2, 2),
-      new FoodDetail("Yoghurt", "grams", 100, 120, 5, 23, 4),
-    ];
-
+    this.foods = this.foodsRepository.foods;
     this.filteredFoods = JSON.parse(JSON.stringify(this.foods));
   }
 

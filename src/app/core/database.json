@@ -1,0 +1,730 @@
+[
+  {
+    "Name": "Adana Kebab",
+    "Calorie": 130,
+    "Protein": 7,
+    "Carbohydrate": 15,
+    "Fat": 5,
+    "ServingSize": 100
+  },
+  {
+    "Name": "Aytac Yogurt",
+    "Calorie": 129,
+    "Protein": 4,
+    "Carbohydrate": 5,
+    "Fat": 10,
+    "ServingSize": 100
+  },
+  {
+    "Name": "Baked Potato",
+    "Calorie": 93,
+    "Protein": 2.5,
+    "Carbohydrate": 21,
+    "Fat": 0.1,
+    "ServingSize": 100
+  },
+  {
+    "Name": "Bamya",
+    "Calorie": 130,
+    "Protein": 8,
+    "Carbohydrate": 7.8,
+    "Fat": 7.8,
+    "ServingSize": 100
+  },
+  {
+    "Name": "Battered Fish",
+    "Calorie": 200,
+    "Protein": 16.7,
+    "Carbohydrate": 6.7,
+    "Fat": 11.3,
+    "ServingSize": 100
+  },
+  {
+    "Name": "BBQ Sauce",
+    "Calorie": 171,
+    "Protein": 0.9,
+    "Carbohydrate": 39.6,
+    "Fat": 0.2,
+    "ServingSize": 100
+  },
+  {
+    "Name": "Beans",
+    "Calorie": 78,
+    "Protein": 4.7,
+    "Carbohydrate": 12.5,
+    "Fat": 0.2,
+    "ServingSize": 100
+  },
+  {
+    "Name": "Beef Liver Stew",
+    "Calorie": 170,
+    "Protein": 26,
+    "Carbohydrate": 5,
+    "Fat": 5,
+    "ServingSize": 100
+  },
+  {
+    "Name": "Beef Mince",
+    "Calorie": 330,
+    "Protein": 14,
+    "Carbohydrate": 0,
+    "Fat": 30,
+    "ServingSize": 100
+  },
+  {
+    "Name": "Bulgur",
+    "Calorie": 83,
+    "Protein": 3.1,
+    "Carbohydrate": 19,
+    "Fat": 0.2,
+    "ServingSize": 100
+  },
+  {
+    "Name": "Cheese Baked Pasta",
+    "Calorie": 170,
+    "Protein": 10.2,
+    "Carbohydrate": 12.2,
+    "Fat": 8.6,
+    "ServingSize": 100
+  },
+  {
+    "Name": "Cheese Borek",
+    "Calorie": 259,
+    "Protein": 10.1,
+    "Carbohydrate": 33,
+    "Fat": 9.1,
+    "ServingSize": 100
+  },
+  {
+    "Name": "Cheese Lasagna",
+    "Calorie": 150,
+    "Protein": 7.7,
+    "Carbohydrate": 19,
+    "Fat": 4,
+    "ServingSize": 100
+  },
+  {
+    "Name": "Cheese Pogaca",
+    "Calorie": 94,
+    "Protein": 2.6,
+    "Carbohydrate": 7.4,
+    "Fat": 6,
+    "ServingSize": 30
+  },
+  {
+    "Name": "Chicken Breast",
+    "Calorie": 165,
+    "Protein": 31,
+    "Carbohydrate": 0,
+    "Fat": 3.6,
+    "ServingSize": 100
+  },
+  {
+    "Name": "Chicken Breast Stewed",
+    "Calorie": 182,
+    "Protein": 27.1,
+    "Carbohydrate": 0,
+    "Fat": 7.3,
+    "ServingSize": 100
+  },
+  {
+    "Name": "Chicken Doner",
+    "Calorie": 400,
+    "Protein": 28,
+    "Carbohydrate": 20,
+    "Fat": 27,
+    "ServingSize": 100
+  },
+  {
+    "Name": "Chicken Leg",
+    "Calorie": 230,
+    "Protein": 25.7,
+    "Carbohydrate": 0,
+    "Fat": 13.3,
+    "ServingSize": 100
+  },
+  {
+    "Name": "Chicken minced",
+    "Calorie": 240,
+    "Protein": 27,
+    "Carbohydrate": 0,
+    "Fat": 14,
+    "ServingSize": 100
+  },
+  {
+    "Name": "Chicken Soup",
+    "Calorie": 40,
+    "Protein": 2.5,
+    "Carbohydrate": 3.5,
+    "Fat": 1,
+    "ServingSize": 100
+  },
+  {
+    "Name": "Chicken Strips",
+    "Calorie": 300,
+    "Protein": 18,
+    "Carbohydrate": 16,
+    "Fat": 18,
+    "ServingSize": 100
+  },
+  {
+    "Name": "Chicken Thigh",
+    "Calorie": 209,
+    "Protein": 27.2,
+    "Carbohydrate": 0,
+    "Fat": 11,
+    "ServingSize": 100
+  },
+  {
+    "Name": "Chicken Thigh Fried",
+    "Calorie": 270,
+    "Protein": 22,
+    "Carbohydrate": 9,
+    "Fat": 15,
+    "ServingSize": 100
+  },
+  {
+    "Name": "Chicken Thigh Stewed",
+    "Calorie": 232,
+    "Protein": 23,
+    "Carbohydrate": 0,
+    "Fat": 15,
+    "ServingSize": 100
+  },
+  {
+    "Name": "Chicken Wing",
+    "Calorie": 80,
+    "Protein": 7.5,
+    "Carbohydrate": 0,
+    "Fat": 6,
+    "ServingSize": 40
+  },
+  {
+    "Name": "Chilli Sauce",
+    "Calorie": 65,
+    "Protein": 2.8,
+    "Carbohydrate": 9.8,
+    "Fat": 0.6,
+    "ServingSize": 100
+  },
+  {
+    "Name": "Chocolate Cake",
+    "Calorie": 370,
+    "Protein": 5,
+    "Carbohydrate": 53,
+    "Fat": 15,
+    "ServingSize": 100
+  },
+  {
+    "Name": "Chocolate Cheesecake",
+    "Calorie": 360,
+    "Protein": 6.3,
+    "Carbohydrate": 41.7,
+    "Fat": 19.5,
+    "ServingSize": 100
+  },
+  {
+    "Name": "Chocolate Ice Cream",
+    "Calorie": 215,
+    "Protein": 4,
+    "Carbohydrate": 28,
+    "Fat": 11,
+    "ServingSize": 100
+  },
+  {
+    "Name": "Cig Kofte No Meat",
+    "Calorie": 240,
+    "Protein": 8,
+    "Carbohydrate": 40,
+    "Fat": 3,
+    "ServingSize": 100
+  },
+  {
+    "Name": "Cig Kofte With Meat",
+    "Calorie": 330,
+    "Protein": 15,
+    "Carbohydrate": 55,
+    "Fat": 10,
+    "ServingSize": 100
+  },
+  {
+    "Name": "Cod Fish",
+    "Calorie": 122,
+    "Protein": 20.9,
+    "Carbohydrate": 0.4,
+    "Fat": 3.5,
+    "ServingSize": 100
+  },
+  {
+    "Name": "Coleslaw",
+    "Calorie": 181,
+    "Protein": 0.8,
+    "Carbohydrate": 5.4,
+    "Fat": 17,
+    "ServingSize": 100
+  },
+  {
+    "Name": "Cornetto",
+    "Calorie": 310,
+    "Protein": 3.1,
+    "Carbohydrate": 35,
+    "Fat": 17,
+    "ServingSize": 100
+  },
+  {
+    "Name": "Dolma",
+    "Calorie": 170,
+    "Protein": 13,
+    "Carbohydrate": 17,
+    "Fat": 6,
+    "ServingSize": 100
+  },
+  {
+    "Name": "Egg",
+    "Calorie": 75,
+    "Protein": 6,
+    "Carbohydrate": 0.6,
+    "Fat": 5,
+    "ServingSize": 50
+  },
+  {
+    "Name": "Emmental Cheese",
+    "Calorie": 116,
+    "Protein": 9.2,
+    "Carbohydrate": 0.5,
+    "Fat": 8.9,
+    "ServingSize": 30
+  },
+  {
+    "Name": "Etli Turlu",
+    "Calorie": 131,
+    "Protein": 4.5,
+    "Carbohydrate": 7.4,
+    "Fat": 9.8,
+    "ServingSize": 100
+  },
+  {
+    "Name": "Full Fat Soft Cheese",
+    "Calorie": 70,
+    "Protein": 1.7,
+    "Carbohydrate": 1.2,
+    "Fat": 6.5,
+    "ServingSize": 30
+  },
+  {
+    "Name": "Garlic Sauce",
+    "Calorie": 247,
+    "Protein": 1,
+    "Carbohydrate": 7.2,
+    "Fat": 23.7,
+    "ServingSize": 100
+  },
+  {
+    "Name": "Grated Cheese",
+    "Calorie": 127,
+    "Protein": 7.6,
+    "Carbohydrate": 0.5,
+    "Fat": 10.5,
+    "ServingSize": 30
+  },
+  {
+    "Name": "Humus",
+    "Calorie": 278,
+    "Protein": 6.7,
+    "Carbohydrate": 10.6,
+    "Fat": 22,
+    "ServingSize": 100
+  },
+  {
+    "Name": "Icli Kofte",
+    "Calorie": 320,
+    "Protein": 11,
+    "Carbohydrate": 23,
+    "Fat": 23,
+    "ServingSize": 100
+  },
+  {
+    "Name": "Kavurma",
+    "Calorie": 265,
+    "Protein": 27.7,
+    "Carbohydrate": 2.1,
+    "Fat": 16.2,
+    "ServingSize": 100
+  },
+  {
+    "Name": "Ketchup",
+    "Calorie": 112,
+    "Protein": 1.3,
+    "Carbohydrate": 26,
+    "Fat": 0.2,
+    "ServingSize": 100
+  },
+  {
+    "Name": "Kisir",
+    "Calorie": 150,
+    "Protein": 4,
+    "Carbohydrate": 22,
+    "Fat": 7,
+    "ServingSize": 100
+  },
+  {
+    "Name": "Kiymali Borek",
+    "Calorie": 250,
+    "Protein": 10,
+    "Carbohydrate": 25,
+    "Fat": 10,
+    "ServingSize": 60
+  },
+  {
+    "Name": "Kofte",
+    "Calorie": 100,
+    "Protein": 6,
+    "Carbohydrate": 3,
+    "Fat": 10,
+    "ServingSize": 50
+  },
+  {
+    "Name": "Kuru patlican Dolmasi",
+    "Calorie": 99,
+    "Protein": 8.2,
+    "Carbohydrate": 4,
+    "Fat": 5.7,
+    "ServingSize": 100
+  },
+  {
+    "Name": "Lahmacun",
+    "Calorie": 150,
+    "Protein": 6,
+    "Carbohydrate": 21,
+    "Fat": 4,
+    "ServingSize": 100
+  },
+  {
+    "Name": "Lamb Chop",
+    "Calorie": 215,
+    "Protein": 28,
+    "Carbohydrate": 0,
+    "Fat": 10.4,
+    "ServingSize": 100
+  },
+  {
+    "Name": "Lamb Doner",
+    "Calorie": 350,
+    "Protein": 15,
+    "Carbohydrate": 20,
+    "Fat": 30,
+    "ServingSize": 100
+  },
+  {
+    "Name": "Lamb Leg",
+    "Calorie": 230,
+    "Protein": 18,
+    "Carbohydrate": 0,
+    "Fat": 17,
+    "ServingSize": 100
+  },
+  {
+    "Name": "Lamb Ribs",
+    "Calorie": 351,
+    "Protein": 23,
+    "Carbohydrate": 0,
+    "Fat": 28,
+    "ServingSize": 100
+  },
+  {
+    "Name": "Lamb Shoulder",
+    "Calorie": 260,
+    "Protein": 17,
+    "Carbohydrate": 0,
+    "Fat": 21,
+    "ServingSize": 100
+  },
+  {
+    "Name": "Light Mayonnaise",
+    "Calorie": 267,
+    "Protein": 0.7,
+    "Carbohydrate": 6.1,
+    "Fat": 27,
+    "ServingSize": 100
+  },
+  {
+    "Name": "Low Fat Yoghurt",
+    "Calorie": 63,
+    "Protein": 5.2,
+    "Carbohydrate": 7,
+    "Fat": 1.55,
+    "ServingSize": 100
+  },
+  {
+    "Name": "Mackerel Curry Sauce",
+    "Calorie": 242,
+    "Protein": 14.1,
+    "Carbohydrate": 3.3,
+    "Fat": 19,
+    "ServingSize": 100
+  },
+  {
+    "Name": "Mackerel Mexican Sauce",
+    "Calorie": 203,
+    "Protein": 16.4,
+    "Carbohydrate": 4,
+    "Fat": 13.1,
+    "ServingSize": 100
+  },
+  {
+    "Name": "Mackerel Spicy Tomato Sauce",
+    "Calorie": 220,
+    "Protein": 12.1,
+    "Carbohydrate": 4.6,
+    "Fat": 16.9,
+    "ServingSize": 100
+  },
+  {
+    "Name": "Mackerel Sunflower Oil",
+    "Calorie": 266,
+    "Protein": 19.7,
+    "Carbohydrate": 0.1,
+    "Fat": 20.8,
+    "ServingSize": 100
+  },
+  {
+    "Name": "Mackerel Sweet Chilli",
+    "Calorie": 198,
+    "Protein": 13,
+    "Carbohydrate": 4.6,
+    "Fat": 14,
+    "ServingSize": 100
+  },
+  {
+    "Name": "Mackerel Teriyaki Sauce",
+    "Calorie": 254,
+    "Protein": 12.6,
+    "Carbohydrate": 13.4,
+    "Fat": 16.2,
+    "ServingSize": 100
+  },
+  {
+    "Name": "Magnum",
+    "Calorie": 309,
+    "Protein": 3.6,
+    "Carbohydrate": 29,
+    "Fat": 19,
+    "ServingSize": 100
+  },
+  {
+    "Name": "Manti",
+    "Calorie": 240,
+    "Protein": 10,
+    "Carbohydrate": 26,
+    "Fat": 10,
+    "ServingSize": 100
+  },
+  {
+    "Name": "Mashed Potato",
+    "Calorie": 88,
+    "Protein": 1.7,
+    "Carbohydrate": 15,
+    "Fat": 2.8,
+    "ServingSize": 100
+  },
+  {
+    "Name": "Meaty Lasagna",
+    "Calorie": 165,
+    "Protein": 9.9,
+    "Carbohydrate": 17,
+    "Fat": 6,
+    "ServingSize": 100
+  },
+  {
+    "Name": "Mercimek Koftesi",
+    "Calorie": 215,
+    "Protein": 6,
+    "Carbohydrate": 20,
+    "Fat": 13,
+    "ServingSize": 100
+  },
+  {
+    "Name": "Nar Eksisi",
+    "Calorie": 118,
+    "Protein": 0.5,
+    "Carbohydrate": 30.1,
+    "Fat": 0,
+    "ServingSize": 100
+  },
+  {
+    "Name": "Olive Oil",
+    "Calorie": 823,
+    "Protein": 0,
+    "Carbohydrate": 0,
+    "Fat": 91.5,
+    "ServingSize": 100
+  },
+  {
+    "Name": "Onion Chicken Noodles",
+    "Calorie": 335,
+    "Protein": 7.7,
+    "Carbohydrate": 49.4,
+    "Fat": 11.4,
+    "ServingSize": 75
+  },
+  {
+    "Name": "Palamut",
+    "Calorie": 130,
+    "Protein": 25.8,
+    "Carbohydrate": 0,
+    "Fat": 2,
+    "ServingSize": 100
+  },
+  {
+    "Name": "Pasta",
+    "Calorie": 131,
+    "Protein": 5,
+    "Carbohydrate": 25,
+    "Fat": 1,
+    "ServingSize": 100
+  },
+  {
+    "Name": "Pastirma",
+    "Calorie": 160,
+    "Protein": 30,
+    "Carbohydrate": 2,
+    "Fat": 3,
+    "ServingSize": 100
+  },
+  {
+    "Name": "Patatesli Borek",
+    "Calorie": 230,
+    "Protein": 5,
+    "Carbohydrate": 35,
+    "Fat": 7,
+    "ServingSize": 100
+  },
+  {
+    "Name": "Pizza Slice",
+    "Calorie": 260,
+    "Protein": 11,
+    "Carbohydrate": 33,
+    "Fat": 11,
+    "ServingSize": 100
+  },
+  {
+    "Name": "Potato Salad",
+    "Calorie": 140,
+    "Protein": 3,
+    "Carbohydrate": 11,
+    "Fat": 8,
+    "ServingSize": 100
+  },
+  {
+    "Name": "Rice",
+    "Calorie": 130,
+    "Protein": 3,
+    "Carbohydrate": 28,
+    "Fat": 0.5,
+    "ServingSize": 100
+  },
+  {
+    "Name": "Salmon Fillet",
+    "Calorie": 200,
+    "Protein": 25,
+    "Carbohydrate": 0,
+    "Fat": 12,
+    "ServingSize": 100
+  },
+  {
+    "Name": "Sarma",
+    "Calorie": 140,
+    "Protein": 2,
+    "Carbohydrate": 16,
+    "Fat": 7,
+    "ServingSize": 100
+  },
+  {
+    "Name": "Sea bass fish",
+    "Calorie": 124,
+    "Protein": 24,
+    "Carbohydrate": 0,
+    "Fat": 2.6,
+    "ServingSize": 100
+  },
+  {
+    "Name": "Strawberry Cheesecake",
+    "Calorie": 260,
+    "Protein": 3.6,
+    "Carbohydrate": 31.4,
+    "Fat": 13,
+    "ServingSize": 100
+  },
+  {
+    "Name": "Su borek",
+    "Calorie": 275,
+    "Protein": 8.6,
+    "Carbohydrate": 30,
+    "Fat": 13.2,
+    "ServingSize": 120
+  },
+  {
+    "Name": "Syntha Protein Shake",
+    "Calorie": 150,
+    "Protein": 24,
+    "Carbohydrate": 6,
+    "Fat": 3.5,
+    "ServingSize": 40
+  },
+  {
+    "Name": "Tartar Sauce",
+    "Calorie": 42,
+    "Protein": 0.5,
+    "Carbohydrate": 2.3,
+    "Fat": 3.6,
+    "ServingSize": 15
+  },
+  {
+    "Name": "Tomato Soup",
+    "Calorie": 30,
+    "Protein": 1,
+    "Carbohydrate": 7,
+    "Fat": 1,
+    "ServingSize": 100
+  },
+  {
+    "Name": "Tuna tin",
+    "Calorie": 120,
+    "Protein": 27,
+    "Carbohydrate": 0,
+    "Fat": 0.5,
+    "ServingSize": 100
+  },
+  {
+    "Name": "Uncle Bens Golden Veg Rice",
+    "Calorie": 191,
+    "Protein": 4.1,
+    "Carbohydrate": 36.9,
+    "Fat": 2.8,
+    "ServingSize": 125
+  },
+  {
+    "Name": "Vanilla Ice Cream",
+    "Calorie": 210,
+    "Protein": 3.5,
+    "Carbohydrate": 24,
+    "Fat": 11,
+    "ServingSize": 100
+  },
+  {
+    "Name": "Yogurt Soup",
+    "Calorie": 65,
+    "Protein": 2,
+    "Carbohydrate": 5,
+    "Fat": 4,
+    "ServingSize": 100
+  },
+  {
+    "Name": "Zeytinyagli Yesil Fasulye",
+    "Calorie": 85,
+    "Protein": 5.2,
+    "Carbohydrate": 15.2,
+    "Fat": 0.28,
+    "ServingSize": 100
+  }
+]
