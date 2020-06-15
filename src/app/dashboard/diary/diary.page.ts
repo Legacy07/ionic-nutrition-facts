@@ -14,20 +14,20 @@ export class DiaryPage implements OnInit {
   public totalFat = 0;
   public totalCarb = 0;
 
-  public numberOfBreakfastMeals: number;
-  constructor(
-    private localStorageService: LocalStorageService) {}
+  public numberOfBreakfastMeals: number = 0;
+  public numberOfLunchMeals: number = 0;
+  public numberOfDinnerMeals: number = 0;
+  public numberOfSnackMeals: number = 0;
 
-  ngOnInit() {
-  }
+  constructor(private localStorageService: LocalStorageService) {}
+
+  ngOnInit() {}
 
   ionViewDidEnter() {
     this.calculateTotal();
-    this.localStorageService.getValue(this.localStorageService.breakfastKey).then((foods: IFoodDetail[]) => {
-      this.numberOfBreakfastMeals = foods.length;
-    });
+    this.getNumberOfMeals();
   }
-  
+
   calculateTotal() {
     var storage = this.localStorageService;
     var meals = [
@@ -48,6 +48,29 @@ export class DiaryPage implements OnInit {
           });
         }
       });
+    });
+  }
+
+  getNumberOfMeals() {
+    var storage = this.localStorageService;
+    var meals = [
+      storage.breakfastKey,
+      storage.lunchKey,
+      storage.dinnerKey,
+      storage.snackKey,
+    ];
+
+    storage.getValue(meals[0]).then((foods: IFoodDetail[]) => {
+      this.numberOfBreakfastMeals = foods.length;
+    });
+    storage.getValue(meals[1]).then((foods: IFoodDetail[]) => {
+      this.numberOfLunchMeals = foods.length;
+    });
+    storage.getValue(meals[2]).then((foods: IFoodDetail[]) => {
+      this.numberOfDinnerMeals = foods.length;
+    });
+    storage.getValue(meals[3]).then((foods: IFoodDetail[]) => {
+      this.numberOfSnackMeals = foods.length;
     });
   }
 }

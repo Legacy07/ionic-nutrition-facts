@@ -10,10 +10,10 @@
     <ion-col size-xl="6">
       <!-- might wanna remove card  -->
       <!-- integrate ion-infinite-scroll -->
-      <ion-card >
-        <ion-card-content *ngFor="let food of filteredFoods" >
-          <ion-list  >
-            <ion-item (click)="broadcastSelectedFood(food)">
+      <ion-card>
+        <ion-card-content *ngFor="let food of filteredFoods">
+          <ion-list>
+            <ion-item (click)="broadcastSelectedFood(food)" lines="none">
               <ion-label>
                 <h2><b>{{food.Name}}</b></h2>
                 <p><b>{{food.ServingSize}}</b> grams</p>
@@ -30,8 +30,13 @@
         </ion-card-content>
       </ion-card>
     </ion-col>
-    <ion-col class="ion-hide-md-down" size-xl="6" [hidden]="currentFood.Name === undefined">
+    <ion-col class="ion-hide-md-down sticky" size-xl="6" [hidden]="currentFood.Name === undefined">
       <app-calorie-breakdown></app-calorie-breakdown>
     </ion-col>
   </ion-row>
+
+  <ion-infinite-scroll (ionInfinite)="loadNext($event)" threshold="25%">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more data...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
 </ion-content>

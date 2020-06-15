@@ -3,7 +3,7 @@ import { FoodDetail, IFoodDetail } from "./shared/food-detail";
 import { FoodService } from "./shared/food.service";
 import { ModalController } from "@ionic/angular";
 import { AddMealModalComponent } from "./add-meal-modal/add-meal-modal.component";
-import { FoodsRepositoryService } from './shared/foods-repository.service';
+import { FoodsRepositoryService } from "./shared/foods-repository.service";
 
 @Component({
   selector: "app-foods",
@@ -15,6 +15,7 @@ export class FoodsPage implements OnInit {
   public filteredFoods: IFoodDetail[];
 
   public currentFood: IFoodDetail;
+  public index = 0;
 
   constructor(
     public foodService: FoodService,
@@ -27,8 +28,23 @@ export class FoodsPage implements OnInit {
   }
 
   ngOnInit() {
-    this.foods = this.foodsRepository.foods;
+    this.foods = new Array<IFoodDetail>();
+    this.loadFoodsData();
+  }
+
+  loadFoodsData(event?) {
+    let f = this.foodsRepository.getFoods(this.index, 10);
+    this.foods = this.foods.concat(f);
     this.filteredFoods = JSON.parse(JSON.stringify(this.foods));
+
+    if (event) {
+      event.target.complete();
+    }
+  }
+
+  loadNext(event) {
+    this.index += 10;
+    this.loadFoodsData(event);
   }
 
   selectedFood(food: IFoodDetail) {
@@ -41,7 +57,9 @@ export class FoodsPage implements OnInit {
 
   async filterFoods(evt: any) {
     this.foodService.selectedFood(FoodDetail.defaultInstance());
-    this.filteredFoods = JSON.parse(JSON.stringify(this.foods));
+    var allFoods = this.foodsRepository.foods;
+    // get all foods if searching
+    this.filteredFoods = JSON.parse(JSON.stringify(allFoods));
 
     const searchTerm = evt.srcElement.value;
 
@@ -49,7 +67,7 @@ export class FoodsPage implements OnInit {
       return;
     }
 
-    this.filteredFoods = this.foods.filter((currentFood) => {
+    this.filteredFoods = allFoods.filter((currentFood) => {
       if (currentFood.Name && searchTerm) {
         return (
           currentFood.Name.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1
