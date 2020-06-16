@@ -4,6 +4,7 @@ import { FoodService } from "./shared/food.service";
 import { ModalController } from "@ionic/angular";
 import { AddMealModalComponent } from "./add-meal-modal/add-meal-modal.component";
 import { FoodsRepositoryService } from "./shared/foods-repository.service";
+import { CalorieBreakdownComponent } from './calorie-breakdown/calorie-breakdown.component';
 
 @Component({
   selector: "app-foods",
@@ -29,9 +30,12 @@ export class FoodsPage implements OnInit {
 
   ngOnInit() {
     this.foods = new Array<IFoodDetail>();
-    this.loadFoodsData();
+    // this.loadFoodsData();
+    this.foods = this.foodsRepository.foods;
+    this.filteredFoods = JSON.parse(JSON.stringify(this.foods));
   }
 
+  // ion infinite scroll
   loadFoodsData(event?) {
     let f = this.foodsRepository.getFoods(this.index, 10);
     this.foods = this.foods.concat(f);
@@ -42,6 +46,7 @@ export class FoodsPage implements OnInit {
     }
   }
 
+  // ion infinite scroll
   loadNext(event) {
     this.index += 10;
     this.loadFoodsData(event);
@@ -51,8 +56,17 @@ export class FoodsPage implements OnInit {
     this.currentFood = food;
   }
 
-  broadcastSelectedFood(food: IFoodDetail) {
+  async broadcastSelectedFood(food: IFoodDetail) {
     this.foodService.selectedFood(food);
+
+    // open modal if mobile
+    if (window.screen.width < 768) {
+      const modal = await this.modalController.create({
+        component: CalorieBreakdownComponent,
+        swipeToClose: true
+      });
+      return await modal.present();
+    }
   }
 
   async filterFoods(evt: any) {

@@ -80,7 +80,6 @@ export class AddMealModalComponent implements OnInit {
     return this.selectedMealType !== undefined && this.currentFood.ServingSize > 0;
   }
 
-  // need to calculate based on serving size like grams and quantity 
   private recalculateNutritionsBasedOnServingSize() : IFoodDetail {
     if (this.currentFood.ServingSize === this.selectedFood.ServingSize) {
       return this.currentFood;
@@ -88,10 +87,10 @@ export class AddMealModalComponent implements OnInit {
 
     var difference = this.currentFood.ServingSize / this.selectedFood.ServingSize;
     
-    this.currentFood.Calorie = this.selectedFood.Calorie * difference;
-    this.currentFood.Protein = this.selectedFood.Protein * difference;
-    this.currentFood.Carbohydrate = this.selectedFood.Carbohydrate * difference;
-    this.currentFood.Fat = this.selectedFood.Fat * difference;
+    this.currentFood.Calorie = Math.round(this.selectedFood.Calorie * difference);
+    this.currentFood.Protein = Math.round(this.selectedFood.Protein * difference);
+    this.currentFood.Carbohydrate = Math.round(this.selectedFood.Carbohydrate * difference);
+    this.currentFood.Fat = Math.round(this.selectedFood.Fat * difference);
 
     return this.currentFood;
   }

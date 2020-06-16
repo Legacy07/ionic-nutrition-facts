@@ -3,6 +3,7 @@ import { GoogleChartInterface } from "ng2-google-charts";
 import { FoodService } from "../shared/food.service";
 import { IFoodDetail } from "../shared/food-detail";
 import { CalorieCalculatorService } from "../shared/calorie-calculator.service";
+import { ModalController } from '@ionic/angular';
 
 @Component({
   selector: "app-calorie-breakdown",
@@ -19,7 +20,8 @@ export class CalorieBreakdownComponent implements OnInit {
 
   constructor(
     public foodService: FoodService,
-    public caloriCalculatorService: CalorieCalculatorService
+    public caloriCalculatorService: CalorieCalculatorService,
+    public modalController: ModalController
   ) {}
 
   ngOnInit() {
@@ -29,6 +31,12 @@ export class CalorieBreakdownComponent implements OnInit {
 
     this.loadSimplePieChart();
     this.drawPieChart();
+  }
+
+  public dismissModal(): void {
+    this.modalController.dismiss({
+      dismissed: true,
+    });
   }
 
   selectedFood(food: IFoodDetail) {
