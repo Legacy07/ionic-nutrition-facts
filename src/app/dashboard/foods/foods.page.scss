@@ -2,13 +2,3 @@ ion-card {
     max-height: calc(100vh - 150px);
     overflow-y: scroll;
 }
-
-ion-item:hover {
-    // --ion-background-color: lightgray;
-    cursor: pointer;
-}
-
-ion-item:hover {
-    --ion-background-color: lightgray;
-    background-color: lightgray;
-}
