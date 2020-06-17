@@ -4,7 +4,7 @@ import { FoodService } from "./shared/food.service";
 import { ModalController } from "@ionic/angular";
 import { AddMealModalComponent } from "./add-meal-modal/add-meal-modal.component";
 import { FoodsRepositoryService } from "./shared/foods-repository.service";
-import { CalorieBreakdownComponent } from './calorie-breakdown/calorie-breakdown.component';
+import { CalorieBreakdownComponent } from "./calorie-breakdown/calorie-breakdown.component";
 
 @Component({
   selector: "app-foods",
@@ -30,9 +30,17 @@ export class FoodsPage implements OnInit {
 
   ngOnInit() {
     this.foods = new Array<IFoodDetail>();
+    this.filteredFoods = new Array<IFoodDetail>();
+
     // this.loadFoodsData();
-    this.foods = this.foodsRepository.foods;
-    this.filteredFoods = JSON.parse(JSON.stringify(this.foods));
+  }
+
+  ionViewDidEnter() {
+    // added async to help speed up the renedring of the page but doesnt help.
+    this.foodsRepository.getAllFoods().then((foods) => {
+      this.foods = foods;
+      this.filteredFoods = JSON.parse(JSON.stringify(this.foods));
+    });
   }
 
   // ion infinite scroll
@@ -63,7 +71,7 @@ export class FoodsPage implements OnInit {
     if (window.screen.width < 768) {
       const modal = await this.modalController.create({
         component: CalorieBreakdownComponent,
-        swipeToClose: true
+        swipeToClose: true,
       });
       return await modal.present();
     }
@@ -71,7 +79,7 @@ export class FoodsPage implements OnInit {
 
   async filterFoods(evt: any) {
     this.foodService.selectedFood(FoodDetail.defaultInstance());
-    var allFoods = this.foodsRepository.foods;
+    var allFoods = this.foods;
     // get all foods if searching
     this.filteredFoods = JSON.parse(JSON.stringify(allFoods));
 

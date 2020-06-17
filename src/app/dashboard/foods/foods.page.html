@@ -6,12 +6,13 @@
       <ion-searchbar showCancelButton="never" (ionChange)="filterFoods($event)"></ion-searchbar>
     </ion-col>
   </ion-row>
-  <ion-row *ngIf="filteredFoods.length > 0">
+  <ion-row>
     <ion-col size-xl="6">
       <!-- might wanna remove card  -->
       <!-- integrate ion-infinite-scroll -->
       <ion-card>
-        <ion-card-content *ngFor="let food of filteredFoods">
+        <ion-spinner [hidden]="filteredFoods.length > 0"></ion-spinner>
+        <ion-card-content [hidden]="filteredFoods.length === 0" *ngFor="let food of filteredFoods">
           <ion-list>
             <ion-item lines="none">
               <ion-label>
