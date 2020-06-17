@@ -15,30 +15,28 @@
     <ion-col size-xl="4">
       <ion-card>
         <ion-card-content>
-          {{proteinPercentage}}% Protein
+          <ion-text>{{proteinPercentage}}% Protein</ion-text>
         </ion-card-content>
       </ion-card>
     </ion-col>
     <ion-col size-xl="4">
       <ion-card>
         <ion-card-content>
-          {{carbPercentage}}% Carb
+          <ion-text>{{carbPercentage}}% Carb</ion-text>
         </ion-card-content>
       </ion-card>
     </ion-col>
     <ion-col size-xl="4">
       <ion-card>
         <ion-card-content>
-          {{fatPercentage}}% Fat
+          <ion-text>{{fatPercentage}}% Fat</ion-text>
         </ion-card-content>
       </ion-card>
     </ion-col>
   </ion-row>
   <ion-row>
     <ion-col>
-      <ion-card>
-        <google-chart [data]="pieChart"></google-chart>
-      </ion-card>
+      <google-chart [data]="pieChart"></google-chart>
     </ion-col>
   </ion-row>
 </ion-content>
