@@ -7,33 +7,34 @@
       <ion-card-content class="ion-text-center">
         <ion-text>Total Nutrients</ion-text>
         <ion-button fill="clear" size="small" class="ion-float-right ion-hide-md-up" style="margin: -5px;" (click)="toggleShowContent()">
-          <ion-icon name="chevron-down-outline"></ion-icon>
+          <ion-icon name="chevron-down-outline" *ngIf="!showNutrients"></ion-icon>
+          <ion-icon name="chevron-up-outline" *ngIf="showNutrients"></ion-icon>
         </ion-button>
       </ion-card-content>
     </ion-card>
   </ion-col>
-  <ion-col size-xl="2">
+  <ion-col size-xl="2" *ngIf="showNutrients">
     <ion-card>
-      <ion-card-content class="ion-text-center" class="ion-hide-md-down">
+      <ion-card-content class="ion-text-center">
         <ion-text>{{this.totalCalories}} Calories</ion-text>
       </ion-card-content>
     </ion-card>
   </ion-col>
-  <ion-col size-xl="2" class="ion-hide-md-down">
+  <ion-col size-xl="2" *ngIf="showNutrients">
     <ion-card>
       <ion-card-content class="ion-text-center">
         <ion-text>{{this.totalProtein}}g Protein</ion-text>
       </ion-card-content>
     </ion-card>
   </ion-col>
-  <ion-col size-xl="2" class="ion-hide-md-down">
+  <ion-col size-xl="2" *ngIf="showNutrients">
     <ion-card>
       <ion-card-content class="ion-text-center">
         <ion-text>{{this.totalCarb}}g Carbs</ion-text>
       </ion-card-content>
     </ion-card>
   </ion-col>
-  <ion-col size-xl="2" class="ion-hide-md-down">
+  <ion-col size-xl="2" *ngIf="showNutrients">
     <ion-card>
       <ion-card-content class="ion-text-center">
         <ion-text>{{this.totalFat}}g Fat</ion-text>

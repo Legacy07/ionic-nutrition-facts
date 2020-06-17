@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, HostListener } from "@angular/core";
 import { IFoodDetail, FoodDetail } from "../foods/shared/food-detail";
 import { LocalStorageService } from "src/app/shared/services/local-storage.service";
 import { MealsService } from "./shared/meals.service";
@@ -19,13 +19,25 @@ export class DiaryPage implements OnInit {
   public numberOfDinnerMeals: number = 0;
   public numberOfSnackMeals: number = 0;
 
+  public showNutrients: boolean = true;
+
   constructor(private localStorageService: LocalStorageService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    if (window.screen.width < 768) {
+      this.showNutrients = false;
+    } else {
+      this.showNutrients = true;
+    }
+  }
 
   ionViewDidEnter() {
     this.calculateTotal();
     this.getNumberOfMeals();
+  }
+
+  toggleShowContent() {
+    this.showNutrients = !this.showNutrients;
   }
 
   calculateTotal() {
