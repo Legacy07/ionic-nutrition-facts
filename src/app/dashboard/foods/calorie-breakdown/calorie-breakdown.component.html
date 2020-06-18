@@ -14,28 +14,28 @@
   <ion-row>
     <ion-col size-xl="4">
       <ion-card>
-        <ion-card-content>
+        <ion-card-content class="ion-text-center">
           <ion-text>{{proteinPercentage}}% Protein</ion-text>
         </ion-card-content>
       </ion-card>
     </ion-col>
     <ion-col size-xl="4">
       <ion-card>
-        <ion-card-content>
+        <ion-card-content class="ion-text-center">
           <ion-text>{{carbPercentage}}% Carb</ion-text>
         </ion-card-content>
       </ion-card>
     </ion-col>
     <ion-col size-xl="4">
       <ion-card>
-        <ion-card-content>
+        <ion-card-content class="ion-text-center">
           <ion-text>{{fatPercentage}}% Fat</ion-text>
         </ion-card-content>
       </ion-card>
     </ion-col>
   </ion-row>
   <ion-row>
-    <ion-col>
+    <ion-col offset-xl="2" offset-xs="1">
       <google-chart [data]="pieChart"></google-chart>
     </ion-col>
   </ion-row>

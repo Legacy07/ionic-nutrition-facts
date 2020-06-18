@@ -65,6 +65,7 @@ export class CalorieBreakdownComponent implements OnInit {
         is3D: true,
         height: 300,
         width: "100%",
+        backgroundColor: { fill:'transparent' }
       },
     };
   }

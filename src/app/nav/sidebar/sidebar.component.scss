@@ -8,18 +8,24 @@
 }
 
 ion-menu {
-    background-color: var(--ion-color-primary);
-    --ion-background-color: var(--ion-color-primary);
+    --ion-background-color: linear-gradient(180deg, var(--ion-color-primary) 0%, var(--ion-color-secondary) 100%);
     --ion-text-color: var(--ion-color-primary-contrast);
 
     ion-toolbar {
-        --background: var(--ion-color-primary);
-        // --color: var(--ion-color-light);
+        --background: transparent;
     }
 
     ion-list {
-        /* optional, but it needs when you use gradient as a background color.*/
         background: transparent;
+    }
+
+    ion-item {
+        color: white;
+        --background: transparent;
+    }
+
+    ion-content {
+        --background: transparent;
     }
 }
 

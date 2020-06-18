@@ -35,12 +35,16 @@ const routes: Routes = [
         loadChildren: () =>
           import("./admin/admin.module").then((m) => m.AdminPageModule),
       },
+
+      {
+        path: "bmr-calculator",
+        loadChildren: () =>
+          import("./bmr-calculator/bmr-calculator.module").then(
+            (m) => m.BmrCalculatorPageModule
+          ),
+      },
     ],
-  },
-  {
-    path: 'bmr-calculator',
-    loadChildren: () => import('./bmr-calculator/bmr-calculator.module').then( m => m.BmrCalculatorPageModule)
-  },
+  }
 ];
 
 @NgModule({
