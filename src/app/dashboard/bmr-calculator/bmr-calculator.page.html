@@ -1,5 +1,107 @@
 <app-menu-button [title]="title"></app-menu-button>
 
 <ion-content>
-
+    <ion-row>
+        <ion-col size-lg="4" offset-lg="2">
+            <ion-card>
+                <ion-card-content>
+                    <ion-row>
+                        <ion-col size-lg="8">
+                            <ion-item>
+                                <ion-label position="floating">Age</ion-label>
+                                <ion-input type="number" [(ngModel)]="ageInput"></ion-input>
+                            </ion-item>
+                        </ion-col>
+                    </ion-row>
+                    <ion-row>
+                        <ion-col size-lg="8">
+                            <ion-list>
+                                <ion-list-header>
+                                    <ion-label>Sex</ion-label>
+                                </ion-list-header>
+                                <ion-radio-group value="male" (ionChange)="onChangeSex($event)">
+                                    <ion-item lines="none">
+                                        <ion-label>Male</ion-label>
+                                        <ion-radio slot="start" value="male"></ion-radio>
+                                    </ion-item>
+                                    <ion-item lines="none">
+                                        <ion-label>Female</ion-label>
+                                        <ion-radio slot="start" value="female"></ion-radio>
+                                    </ion-item>
+                                </ion-radio-group>
+                            </ion-list>
+                        </ion-col>
+                    </ion-row>
+                    <ion-row>
+                        <ion-col size-lg="8">
+                            <ion-item>
+                                <ion-label position="floating">Height</ion-label>
+                                <ion-input type="number" [(ngModel)]="heightInput"></ion-input>
+                            </ion-item>
+                        </ion-col>
+                        <ion-col size-lg="4" class="ion-margin-top">
+                            <ion-item lines="none">
+                                <span *ngIf="isCentimetres">cm</span>
+                                <span *ngIf="!isCentimetres">inches</span>
+                                <ion-toggle id="themeToggle" (ionChange)="toggleHeight()"></ion-toggle>
+                            </ion-item>
+                        </ion-col>
+                    </ion-row>
+                    <ion-row>
+                        <ion-col size-lg="8">
+                            <ion-item>
+                                <ion-label position="floating">Weight</ion-label>
+                                <ion-input type="number" [(ngModel)]="weightInput"></ion-input>
+                            </ion-item>
+                        </ion-col>
+                        <ion-col size-lg="4" class="ion-margin-top">
+                            <ion-item lines="none">
+                                <span *ngIf="isKilogram">kg</span>
+                                <span *ngIf="!isKilogram">lbs</span>
+                                <ion-toggle id="themeToggle" (ionChange)="toggleWeight()"></ion-toggle>
+                            </ion-item>
+                        </ion-col>
+                    </ion-row>
+                    <ion-row>
+                        <ion-col>
+                            <ion-list>
+                                <ion-list-header>
+                                    <ion-label>I desire to;</ion-label>
+                                </ion-list-header>
+                                <ion-radio-group value="maintain-weight" (ionChange)="onChangeDesire($event)">
+                                    <ion-item lines="none">
+                                        <ion-label>Maintain weight</ion-label>
+                                        <ion-radio slot="start" value="maintain-weight"></ion-radio>
+                                    </ion-item>
+                                    <ion-item lines="none">
+                                        <ion-label>Lose weight</ion-label>
+                                        <ion-radio slot="start" value="lose-weight"></ion-radio>
+                                    </ion-item>
+                                    <ion-item lines="none">
+                                        <ion-label>Gain weight</ion-label>
+                                        <ion-radio slot="start" value="gain-weight"></ion-radio>
+                                    </ion-item>
+                                </ion-radio-group>
+                            </ion-list>
+                        </ion-col>
+                    </ion-row>
+                    <ion-button (click)="calculate()">Calculate</ion-button>
+                </ion-card-content>
+            </ion-card>
+        </ion-col>
+        <ion-col size-lg="3" *ngIf="calculatedResult !== undefined">
+            <ion-card>
+                <ion-card-header>
+                    Result
+                </ion-card-header>
+                <ion-card-content>
+                    <ion-row>
+                        <ion-col>
+                            <ion-label>{{calculatedResult}}</ion-label>
+                        </ion-col>
+                    </ion-row>
+                </ion-card-content>
+            </ion-card>
+        </ion-col>
+    </ion-row>
 </ion-content>
