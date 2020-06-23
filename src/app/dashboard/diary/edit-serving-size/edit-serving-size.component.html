@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button color="dark" (click)="closeModal()">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Update Meal for {{currentFood.Name}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-row>
+    <ion-col offset-xl="2" size-xl="5" size-xs="8" class="ion-padding-start">
+      <ion-label>Change serving size (in grams)</ion-label>
+    </ion-col>
+    <ion-col offset-xl="1" offset-xs="2" size="2" style="margin-top: -10px">
+      <ion-input placeholder="Quantity" type="number" [value]="currentFood.ServingSize" [(ngModel)]="currentFood.ServingSize"></ion-input>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col offset-xl="5">
+      <ion-button (click)="editMeal()" [disabled]="!isValid()">
+        Update Meal
+      </ion-button>
+    </ion-col>
+  </ion-row>
+</ion-content>
