@@ -2,16 +2,15 @@
 
 <ion-content>
   <ion-row>
-    <ion-col offset-xl="1">
-      <ion-title class="ion-padding-top">General Options</ion-title>
-    </ion-col>
-  </ion-row>
-  <ion-item-divider></ion-item-divider>
-  <ion-row>
     <ion-col size-xl="8" offset-xl="2">
       <ion-card>
+        <ion-card-header>
+          <ion-item >
+            <ion-label class="ion-padding-top">General Options</ion-label>
+          </ion-item>
+        </ion-card-header>
         <ion-card-content>
-          <ion-item lines="none">
+          <ion-item lines="none" class="ion-margin-start">
             <ion-label>Theme Prefence</ion-label>
           <ion-icon slot="end" name="moon" *ngIf="darkMode === false"></ion-icon>
           <ion-icon slot="end" name="sunny-outline" *ngIf="darkMode === true"></ion-icon>
