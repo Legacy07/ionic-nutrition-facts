@@ -1,14 +1,16 @@
-import { Injectable } from '@angular/core';
-import { IFoodDetail, FoodDetail } from './food-detail';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { Injectable } from "@angular/core";
+import { IFoodDetail, FoodDetail } from "./food-detail";
+import { BehaviorSubject, Observable } from "rxjs";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root",
 })
 export class FoodService {
-  private foodDetailBroadcast$ = new BehaviorSubject<IFoodDetail>(FoodDetail.defaultInstance());
+  private foodDetailBroadcast$ = new BehaviorSubject<IFoodDetail>(
+    FoodDetail.defaultInstance()
+  );
 
-  constructor() {  }
+  constructor() {}
 
   selectedFood(food: IFoodDetail) {
     this.foodDetailBroadcast$.next(food);
@@ -16,5 +18,5 @@ export class FoodService {
 
   getSelectedFood$(): Observable<IFoodDetail> {
     return this.foodDetailBroadcast$.asObservable();
-   }
+  }
 }

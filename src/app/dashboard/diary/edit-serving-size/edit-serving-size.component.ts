@@ -3,6 +3,7 @@ import { ModalController } from "@ionic/angular";
 import { LoggerService } from "src/app/core/logger.service";
 import { LocalStorageService } from 'src/app/shared/services/local-storage.service';
 import { IFoodDetail } from '../../foods/shared/food-detail';
+import { typeWithParameters } from '@angular/compiler/src/render3/util';
 
 @Component({
   selector: "app-edit-serving-size",
@@ -37,7 +38,7 @@ export class EditServingSizeComponent implements OnInit {
   public editMeal() {
     if (this.currentFood.ServingSize > 0) {
       this.currentFood = this.recalculateNutritionsBasedOnServingSize();
-      this.broadcastAddedFood();
+      this.updateMeal();
       this.dismissModal();
     }
     else {
@@ -45,18 +46,22 @@ export class EditServingSizeComponent implements OnInit {
     }
   }
 
-  public broadcastAddedFood() {
-    // fix editing, dont add 
+  public updateMeal() {
     if (this.selectedMealType !== undefined) {
       this.storageServices
         .getValue(this.selectedMealType)
-        .then((val) => {
+        .then((val : IFoodDetail[]) => {
           var meals = val;
           if (meals != null) {
-            meals.push(this.currentFood);
-          } else {
-            meals = new Array<IFoodDetail>();
-            meals.push(this.currentFood);
+           meals.forEach(el => {
+             if (el.Name === this.currentFood.Name) {
+               el.Calorie = this.currentFood.Calorie;
+               el.Protein = this.currentFood.Protein;
+               el.Fat = this.currentFood.Fat;
+               el.Carbohydrate = this.currentFood.Carbohydrate;
+               el.ServingSize = this.currentFood.ServingSize;
+             }
+           });
           }
 
           this.storageServices
