@@ -11,3 +11,9 @@ ion-content {
     max-height: calc(100vh - 200px);
     // --background: linear-gradient(180deg, var(--ion-color-primary) 0%, var(--ion-color-secondary) 100%);
 }
+
+@media  only screen and (max-width: 480px) {
+    ion-content {
+        max-height: 100%;
+    }
+}
