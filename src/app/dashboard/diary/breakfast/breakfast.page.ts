@@ -48,6 +48,7 @@ export class BreakfastPage implements OnInit {
       .then((v) => {
         this.getFoodsFromStorage();
         this.loggerService.success("Removed " + foodName);
+        this.mealsService.setRefreshFoods();
       });
   }
 
@@ -83,7 +84,7 @@ export class BreakfastPage implements OnInit {
           text: "Edit Serving Size",
           icon: "create-outline",
           handler: () => {
-            console.log("Edit clicked");
+            this.openModal(food);
           },
         },
         {
