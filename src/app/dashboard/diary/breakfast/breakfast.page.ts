@@ -5,7 +5,7 @@ import { LoggerService } from "src/app/core/logger.service";
 import { ThrowStmt } from "@angular/compiler";
 import { MealsService } from "../shared/meals.service";
 import { ActionSheetController, ModalController } from "@ionic/angular";
-import { EditServingSizeComponent } from '../edit-serving-size/edit-serving-size.component';
+import { EditServingSizeComponent } from "../edit-serving-size/edit-serving-size.component";
 
 @Component({
   selector: "app-breakfast",
@@ -20,13 +20,16 @@ export class BreakfastPage implements OnInit {
     private storageService: LocalStorageService,
     public loggerService: LoggerService,
     private actionSheetController: ActionSheetController,
-    private modalController: ModalController
+    private modalController: ModalController,
+    private mealsService: MealsService
   ) {
     this.foods = new Array<FoodDetail>();
   }
 
   ngOnInit() {
-    this.getFoodsFromStorage();
+    this.mealsService
+      .refreshFoods$()
+      .subscribe((item) => this.getFoodsFromStorage());
   }
 
   public getFoodsFromStorage() {
@@ -55,22 +58,21 @@ export class BreakfastPage implements OnInit {
   public openActionSheetOrModal(food: IFoodDetail) {
     if (window.screen.width < 768) {
       this.openActionSheet(food);
-    }
-    else {
+    } else {
       this.openModal(food);
     }
   }
 
   async openModal(food: IFoodDetail) {
-     const modal = await this.modalController.create({
-        component: EditServingSizeComponent,
-        swipeToClose: true,
-        componentProps: {
-          'selectedFood': food,
-          'selectedMealType': this.storageService.breakfastKey
-        }
-      });
-      return await modal.present();
+    const modal = await this.modalController.create({
+      component: EditServingSizeComponent,
+      swipeToClose: true,
+      componentProps: {
+        selectedFood: food,
+        selectedMealType: this.storageService.breakfastKey,
+      },
+    });
+    return await modal.present();
   }
 
   async openActionSheet(food: IFoodDetail) {

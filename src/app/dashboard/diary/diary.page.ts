@@ -1,5 +1,5 @@
-import { Component, OnInit, HostListener } from "@angular/core";
-import { IFoodDetail, FoodDetail } from "../foods/shared/food-detail";
+import { Component, OnInit } from "@angular/core";
+import { IFoodDetail } from "../foods/shared/food-detail";
 import { LocalStorageService } from "src/app/shared/services/local-storage.service";
 import { MealsService } from "./shared/meals.service";
 
@@ -14,14 +14,17 @@ export class DiaryPage implements OnInit {
   public totalFat = 0;
   public totalCarb = 0;
 
-  public numberOfBreakfastMeals: number = 0;
-  public numberOfLunchMeals: number = 0;
-  public numberOfDinnerMeals: number = 0;
-  public numberOfSnackMeals: number = 0;
+  public numberOfBreakfastMeals: number;
+  public numberOfLunchMeals: number;
+  public numberOfDinnerMeals: number;
+  public numberOfSnackMeals: number;
 
   public showNutrients: boolean = true;
 
-  constructor(private localStorageService: LocalStorageService) {}
+  constructor(
+    private localStorageService: LocalStorageService,
+    private mealsService: MealsService
+  ) {}
 
   ngOnInit() {
     if (window.screen.width < 768) {
@@ -29,10 +32,21 @@ export class DiaryPage implements OnInit {
     } else {
       this.showNutrients = true;
     }
+
+    this.mealsService
+      .refreshFoods$()
+      .subscribe((item) => this.calculateTotal());
+  }
+
+  resetTotals() {
+    this.totalCalories = 0;
+    this.totalProtein = 0;
+    this.totalCarb = 0;
+    this.totalFat = 0;
   }
 
   ionViewDidEnter() {
-    this.calculateTotal();
+    // this.calculateTotal();
     this.getNumberOfMeals();
   }
 
@@ -41,6 +55,8 @@ export class DiaryPage implements OnInit {
   }
 
   calculateTotal() {
+    this.resetTotals();
+
     var storage = this.localStorageService;
     var meals = [
       storage.breakfastKey,

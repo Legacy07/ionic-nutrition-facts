@@ -6,17 +6,15 @@ import { IFoodDetail, FoodDetail } from "../../foods/shared/food-detail";
   providedIn: "root",
 })
 export class MealsService {
-  private foodDetailsBroadcast$ = new BehaviorSubject<IFoodDetail[]>(
-    new Array<IFoodDetail>()
-  );
+  private refreshFoodsBroadcast$ = new BehaviorSubject<boolean>(false);
 
   constructor() {}
 
-  // selectedFoods(food: IFoodDetail[]) {
-  //   this.foodDetailsBroadcast$.next(food);
-  // }
+  setRefreshFoods() {
+    this.refreshFoodsBroadcast$.next(true);
+  }
 
-  // getSelectedFoods$(): Observable<IFoodDetail[]> {
-  //   return this.foodDetailsBroadcast$.asObservable();
-  // }
+  refreshFoods$(): Observable<boolean> {
+    return this.refreshFoodsBroadcast$.asObservable();
+  }
 }

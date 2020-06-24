@@ -4,6 +4,7 @@ import { LoggerService } from "src/app/core/logger.service";
 import { LocalStorageService } from 'src/app/shared/services/local-storage.service';
 import { IFoodDetail } from '../../foods/shared/food-detail';
 import { typeWithParameters } from '@angular/compiler/src/render3/util';
+import { MealsService } from '../shared/meals.service';
 
 @Component({
   selector: "app-edit-serving-size",
@@ -18,7 +19,8 @@ export class EditServingSizeComponent implements OnInit {
   constructor(
     public modalController: ModalController,
     private storageServices: LocalStorageService,
-    private loggerService: LoggerService
+    private loggerService: LoggerService,
+    private mealsService: MealsService
   ) {}
 
   ngOnInit() {
@@ -69,6 +71,8 @@ export class EditServingSizeComponent implements OnInit {
             .then(async (v) => {
               var msg = "Updated meal serving size in " + this.selectedMealType;
               this.loggerService.success(msg);
+
+              this.mealsService.setRefreshFoods();
             });
         })
         .catch((c) => {
