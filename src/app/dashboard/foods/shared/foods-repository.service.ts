@@ -1,7 +1,6 @@
 import { Injectable } from "@angular/core";
 import localDb from "../../../core/database.json";
 import { IFoodDetail } from "./food-detail";
-import { Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: "root",
@@ -23,4 +22,17 @@ export class FoodsRepositoryService {
   public async getAllFoods() : Promise<Array<IFoodDetail>> {
     return this.foods;
   }
+
+  public async addFood(food: IFoodDetail) {
+    var json = {
+      "Name": food.Name,
+      "Calorie": food.Calorie,
+      "Protein": food.Protein,
+      "Carbohydrate": food.Carbohydrate,
+      "Fat": food.Fat,
+      "ServingSize": food.ServingSize
+    };
+
+    localDb.push(json);
+  } 
 }

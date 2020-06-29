@@ -1,5 +1,43 @@
 <app-menu-button title="{{title}}"></app-menu-button>
 
 <ion-content>
-<!-- able to add and update meals -->
+    <ion-row>
+        <ion-col size-lg="6" offset-lg="3">
+            <ion-card>
+                <ion-card-header>
+                    <ion-text>
+                        Add Meal
+                    </ion-text>
+                </ion-card-header>
+                <ion-card-content>
+                    <ion-item>
+                        <ion-label position="floating">Name</ion-label>
+                        <ion-input type="text" [(ngModel)]="nameInput" required></ion-input>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label position="floating">Serving Size</ion-label>
+                        <ion-input type="text" [(ngModel)]="servingSizeInput" required></ion-input>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label position="floating">Calories</ion-label>
+                        <ion-input type="text" [(ngModel)]="caloriesInput" required></ion-input>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label position="floating">Protein</ion-label>
+                        <ion-input type="text" [(ngModel)]="proteinInput" required></ion-input>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label position="floating">Carb</ion-label>
+                        <ion-input type="text" [(ngModel)]="carbInput" required></ion-input>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label position="floating">Fat</ion-label>
+                        <ion-input type="text" [(ngModel)]="fatInput" required></ion-input>
+                    </ion-item>
+
+                    <ion-button class="ion-margin-top" expand="block" (click)="addMeal()">Add Meal</ion-button>
+                </ion-card-content>
+            </ion-card>
+        </ion-col>
+    </ion-row>
 </ion-content>
