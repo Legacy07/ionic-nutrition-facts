@@ -35,9 +35,7 @@ export class DinnerPage implements OnInit {
     this.storageService
       .getValue(this.storageService.dinnerKey)
       .then((meals) => {
-        if (meals != null) {
-          this.foods = meals;
-        }
+        this.foods = meals;
       });
   }
 

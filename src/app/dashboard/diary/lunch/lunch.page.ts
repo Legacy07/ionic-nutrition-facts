@@ -3,8 +3,8 @@ import { FoodDetail, IFoodDetail } from "../../foods/shared/food-detail";
 import { LocalStorageService } from "src/app/shared/services/local-storage.service";
 import { LoggerService } from "src/app/core/logger.service";
 import { MealsService } from "../shared/meals.service";
-import { EditServingSizeComponent } from '../edit-serving-size/edit-serving-size.component';
-import { ActionSheetController, ModalController } from '@ionic/angular';
+import { EditServingSizeComponent } from "../edit-serving-size/edit-serving-size.component";
+import { ActionSheetController, ModalController } from "@ionic/angular";
 
 @Component({
   selector: "app-lunch",
@@ -33,9 +33,7 @@ export class LunchPage implements OnInit {
 
   public getFoodsFromStorage() {
     this.storageService.getValue(this.storageService.lunchKey).then((meals) => {
-      if (meals != null) {
-        this.foods = meals;
-      }
+      this.foods = meals;
     });
   }
 

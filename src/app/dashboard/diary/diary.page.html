@@ -6,7 +6,8 @@
     <ion-card>
       <ion-card-content class="ion-text-center">
         <ion-text>Total Nutrients</ion-text>
-        <ion-button fill="clear" size="small" class="ion-float-right ion-hide-md-up" style="margin: -5px;" (click)="toggleShowContent()">
+        <ion-button fill="clear" size="small" class="ion-float-right ion-hide-md-up" style="margin: -5px;"
+          (click)="toggleShowContent()">
           <ion-icon name="chevron-down-outline" *ngIf="!showNutrients"></ion-icon>
           <ion-icon name="chevron-up-outline" *ngIf="showNutrients"></ion-icon>
         </ion-button>
@@ -43,9 +44,13 @@
   </ion-col>
 </ion-row>
 
-<ion-content>
+<ion-fab vertical="bottom" horizontal="end" (click)="resetAllMeals()">
+  <ion-fab-button color="danger">
+    <ion-icon name="trash-outline"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
 
-  <!-- might need to ditch tab solution and keep everything in  page giving a header to card only which defines which meal it is -->
+<ion-content>
   <ion-row>
     <ion-tabs>
       <ion-tab-bar slot="bottom">
@@ -76,4 +81,5 @@
       </ion-tab-bar>
     </ion-tabs>
   </ion-row>
+
 </ion-content>

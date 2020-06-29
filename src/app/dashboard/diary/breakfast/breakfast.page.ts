@@ -36,9 +36,7 @@ export class BreakfastPage implements OnInit {
     this.storageService
       .getValue(this.storageService.breakfastKey)
       .then((meals) => {
-        if (meals != null) {
-          this.foods = meals;
-        }
+        this.foods = meals;
       });
   }
 
