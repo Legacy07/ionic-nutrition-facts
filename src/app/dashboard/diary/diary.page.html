@@ -44,7 +44,7 @@
   </ion-col>
 </ion-row>
 
-<ion-fab vertical="bottom" horizontal="end" (click)="resetAllMeals()">
+<ion-fab vertical="bottom" horizontal="end" (click)="resetAllMeals()" *ngIf="totalCalories > 0">
   <ion-fab-button color="danger">
     <ion-icon name="trash-outline"></ion-icon>
   </ion-fab-button>
