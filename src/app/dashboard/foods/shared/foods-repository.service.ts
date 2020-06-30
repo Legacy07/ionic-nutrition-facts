@@ -34,5 +34,7 @@ export class FoodsRepositoryService {
     };
 
     localDb.push(json);
+    var jsonFile = JSON.stringify(localDb);
+// https://forum.ionicframework.com/t/ionic-4-cordova-file-plugin/157138
   } 
 }

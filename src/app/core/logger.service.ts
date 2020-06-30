@@ -20,7 +20,7 @@ export class LoggerService {
     const toast = await this.toastController.create({
       message: msg,
       duration: 2000,
-      color: "error",
+      color: "danger",
     });
     toast.present();
   }
