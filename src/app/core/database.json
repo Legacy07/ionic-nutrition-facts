@@ -32,6 +32,14 @@
     "ServingSize": 100
   },
   {
+    "Name": "Banana",
+    "Calorie": 85,
+    "Protein": 1.1,
+    "Carbohydrate": 19.3,
+    "Fat": 0.5,
+    "ServingSize": 100
+  },
+  {
     "Name": "Battered Fish",
     "Calorie": 200,
     "Protein": 16.7,
@@ -544,12 +552,28 @@
     "ServingSize": 100
   },
   {
+    "Name": "Semi Skimmed Milk",
+    "Calorie": 50,
+    "Protein": 3.6,
+    "Carbohydrate": 4.8,
+    "Fat": 1.8,
+    "ServingSize": 100
+  },
+  {
     "Name": "Nar Eksisi",
     "Calorie": 118,
     "Protein": 0.5,
     "Carbohydrate": 30.1,
     "Fat": 0,
     "ServingSize": 100
+  },
+  {
+    "Name": "Oat",
+    "Calorie": 182,
+    "Protein": 5.2,
+    "Carbohydrate": 30.3,
+    "Fat": 3.5,
+    "ServingSize": 50
   },
   {
     "Name": "Olive Oil",
