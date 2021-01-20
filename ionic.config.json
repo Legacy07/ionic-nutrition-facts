@@ -1,5 +1,5 @@
 {
-  "name": "Nutrition Facts",
+  "name": "nutrition-facts",
   "integrations": {
     "capacitor": {}
   },
